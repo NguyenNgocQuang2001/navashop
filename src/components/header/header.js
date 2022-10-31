@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from "./header.module.scss"
 
 function Header() {
@@ -6,8 +7,10 @@ function Header() {
 
         <div className={styles.header}>
 
-            <img className={styles.logo} src="/logo-nava.png" height={150} />
-            <img className={styles.avatar} src="/chohusky.jpg"/>
+            <Link to="/home">
+                <img className={styles.logo} src="/logo-nava.png" />
+            </Link>
+            <img className={styles.avatar} src="/chohusky.jpg" />
         </div>
     )
 }

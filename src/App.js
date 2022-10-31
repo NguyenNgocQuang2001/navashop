@@ -1,4 +1,5 @@
 import { Header } from "./components/header";
+import { Navbar } from "./components/navbar";
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
 		
 		<>
 			<Header />
+			<Navbar />
 		</>
 	)
 }

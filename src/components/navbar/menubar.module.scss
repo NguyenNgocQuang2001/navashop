@@ -1,0 +1,20 @@
+.menubar__item {
+
+    margin-top: 8px;
+    width: 250px;
+    margin-left: 20px;
+    text-align: start;
+    padding-left: 30px;
+    font-size: 15px;
+
+    .item {
+
+        margin-bottom: 15px;
+    }
+
+    .item:hover {
+
+        color: yellow;
+    }
+    
+}
