@@ -1,33 +1,113 @@
 import styles from "./navbar.module.scss"
 
+const menuItemNam = [
+
+    {
+        name: "Áo khoác nam"
+    },
+    {
+        name: "Áo thun nam"
+    },
+    {
+        name: "Áo sơ mi"
+    },
+    {
+        name: "Áo vét, blazer"
+    },
+    {
+        name: "Quần jeans"
+    }
+]
+
+const menuItemPhuKien = [
+
+    {
+        name: "Mũ"
+    },
+    {
+        name: "Kính"
+    },
+    {
+        name: "Đồng hồ"
+    },
+    {
+        name: "Thắt lưng"
+    },
+    {
+        name: "Dày"
+    }
+]
+
+const menuItemNu = [
+
+    {
+        name: "Đầm, váy"
+    },
+    {
+        name: "Áo nữ"
+    },
+    {
+        name: "Quần nữ"
+    },
+    {
+        name: "Đồ ngủ"
+    },
+    {
+        name: "Chân váy"
+    }
+]
+
+
 function Menubar() {
 
     return (
 
         <div className={styles.navbar__menubar}>
                 <div className={styles.menubar__item}>
-                    <h3>THOI TRANG NAM</h3>
-                    <li className={styles.item}>Ao khoac nam</li>
-                    <li className={styles.item}>Ao thun nam</li>
-                    <li className={styles.item}>Ao so mi nam</li>
-                    <li className={styles.item}>Ao vet, blazer</li>
-                    <li className={styles.item}>Quan jeans</li>
+                    <h3>THỜI TRANG NAM</h3>
+                    {
+                        menuItemNam.map((element,index)=>{
+                            return (
+                                <li 
+                                    className={styles.item}
+                                    key={index}
+                                >
+                                    {element.name}
+                                </li>
+                            )
+                        })
+                    }
+                    
                 </div>
                 <div className={styles.menubar__item}>
-                    <h3>THOI TRANG NU</h3>
-                    <li className={styles.item}>Dam, vay</li>
-                    <li className={styles.item}>Ao nu</li>
-                    <li className={styles.item}>Quan nu</li>
-                    <li className={styles.item}>Do ngu</li>
-                    <li className={styles.item}>Chan vay</li>
+                    <h3>THỜI TRANG NỮ</h3>
+                    {
+                         menuItemNu.map((element,index)=>{
+                            return (
+                                <li 
+                                    className={styles.item}
+                                    key={index}
+                                >
+                                    {element.name}
+                                </li>
+                            )
+                        })
+                    }
                 </div>
                 <div className={styles.menubar__item}>
-                    <h3>PHU KIEN</h3>
-                    <li className={styles.item}>Mu</li>
-                    <li className={styles.item}>Kinh</li>
-                    <li className={styles.item}>Dong ho</li>
-                    <li className={styles.item}>That lung</li>
-                    <li className={styles.item}>Giay</li>
+                    <h3>PHỤ KIỆN</h3>
+                    {
+                         menuItemPhuKien.map((element,index)=>{
+                            return (
+                                <li 
+                                    className={styles.item}
+                                    key={index}
+                                >
+                                    {element.name}
+                                </li>
+                            )
+                        })
+                    }
                 </div>  
         </div>
     )
