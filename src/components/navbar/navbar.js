@@ -10,14 +10,14 @@ function Navbar() {
 
         <div className={styles.navbar}>
             
-            <div className={styles.navbar__item}>Trang chu</div>
+            <div className={styles.navbar__item}>Trang chủ</div>
             <div className={styles.navbar__item}>
-                San pham
+                Sản phẩm
                 <Menubar />
             </div>
-            <div className={styles.navbar__item}>Gioi thieu</div>
-            <div className={styles.navbar__item}>Lien he</div>
-            <input className={styles.navbar_input} type="text" placeholder="Tim kiem" />
+            <div className={styles.navbar__item}>Giới thiệu</div>
+            <div className={styles.navbar__item}>Liên hệ</div>
+            <input className={styles.navbar_input} type="text" placeholder="Tìm kiếm" />
             <SearchIcon className={styles.navbar__search} />
             <ShoppingCartIcon className={styles.navbar__card_shopping} />
         </div>
