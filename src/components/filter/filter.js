@@ -32,9 +32,10 @@ function Filter() {
             <div className={styles.select}>
 
                 <Select
-                    defaultValue={options[0].value}
+                    defaultValue={options[0]}
                     className={styles.select__input}
                     //onChange={setSelectedOption}
+                    isSearchable={false}
                     options={options}
                 />
             </div>
