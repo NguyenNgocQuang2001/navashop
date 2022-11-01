@@ -70,4 +70,9 @@
         }
     }
 
+    .product__item:hover .card__shopping {
+
+        display: block;
+        background-color: #74747442;
+    }
 }
