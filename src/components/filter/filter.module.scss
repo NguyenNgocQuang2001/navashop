@@ -1,0 +1,34 @@
+
+.filter {
+
+    background-color: rgba(7, 27, 27, 0);
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 20px;
+    height: 50px;
+    border-top: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+    position: relative;
+
+    .filter__text {
+
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .filter__text:hover {
+
+        color: rgba(0, 0, 0, 1);
+    }
+
+    .select {
+
+        position: absolute;
+        right: 0px;
+        top: 13px;
+    }
+
+    .select__input {
+
+        width: 250px;
+    }
+}
