@@ -7,10 +7,18 @@ function Header() {
 
         <div className={styles.header}>
 
-            <Link to="/home">
+            <Link 
+                to="/"
+                className={styles.link}
+            >
                 <img className={styles.logo} src="/logo-nava.png" alt="no image" />
             </Link>
-            <img className={styles.avatar} src="/chohusky.jpg" alt="no images" />
+            <Link 
+                to="/profile"
+                className={styles.link}
+            >
+                <img className={styles.avatar} src="/chohusky.jpg" alt="no images" />
+            </Link>
         </div>
     )
 }

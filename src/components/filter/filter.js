@@ -1,5 +1,6 @@
 import styles from "./filter.module.scss"
 import Select from "react-select"
+import { Link } from 'react-router-dom'
 
 const options = [
     { value: '1', label: 'Sắp xếp theo mặc định' },
@@ -17,17 +18,32 @@ function Filter() {
             
             <h2>
                 
-                <span className={styles.filter__text}>
-                    SẢN PHẨM MỚI
-                </span>
+                <Link 
+                    to="/newproduct"
+                    className={styles.link}
+                >
+                    <span className={styles.filter__text}>
+                        SẢN PHẨM MỚI
+                    </span>
+                </Link>
                 &ensp;/&ensp;
-                <span className={styles.filter__text}>
-                    BÁN CHẠY NHẤT
-                </span>
+                <Link 
+                    to="/selling"
+                    className={styles.link}
+                >
+                    <span className={styles.filter__text}>
+                        BÁN CHẠY NHẤT
+                    </span>
+                </Link>
                 &ensp;/&ensp;
-                <span className={styles.filter__text}>
-                    KHUYẾN MẠI
-                </span>
+                <Link 
+                    to="/sale"
+                    className={styles.link}
+                >
+                    <span className={styles.filter__text}>
+                        KHUYẾN MẠI
+                    </span>
+                </Link>
             </h2>
             <div className={styles.select}>
 
