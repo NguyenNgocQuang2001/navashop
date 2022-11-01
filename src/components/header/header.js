@@ -8,9 +8,9 @@ function Header() {
         <div className={styles.header}>
 
             <Link to="/home">
-                <img className={styles.logo} src="/logo-nava.png" />
+                <img className={styles.logo} src="/logo-nava.png" alt="no image" />
             </Link>
-            <img className={styles.avatar} src="/chohusky.jpg" />
+            <img className={styles.avatar} src="/chohusky.jpg" alt="no images" />
         </div>
     )
 }
