@@ -7,7 +7,6 @@ function ProductPage() {
     return (
 
         <>
-            <Navbar />
             <ProductDetail />
             <Relative />
         </>
