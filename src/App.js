@@ -1,8 +1,8 @@
-import Filter from "./components/filter/filter";
 import { Header } from "./components/header";
-import { Navbar } from "./components/navbar";
-import { Product } from "./components/product";
-import { Slidebar } from "./components/slidebar";
+import { Route, Routes } from 'react-router-dom'
+import { Home } from "./components/home";
+import { Profile } from "./components/profile";
+
 
 
 function App() {
@@ -11,10 +11,12 @@ function App() {
 		
 		<>
 			<Header />
-			<Navbar />
-			<Slidebar />
-			<Filter />
-			<Product />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/home" element={<Home />} />
+				<Route path="/product" element={<Home />} />
+				<Route path="/profile" element={<Profile />} />
+			</Routes>
 		</>
 	)
 }
