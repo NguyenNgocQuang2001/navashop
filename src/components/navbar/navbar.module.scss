@@ -84,6 +84,11 @@
 
     .navbar__item:hover::before {
 
+       width: 110px;
+    }
+
+    .active::before {
+
         width: 110px;
     }
 

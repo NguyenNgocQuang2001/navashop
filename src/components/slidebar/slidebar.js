@@ -6,15 +6,15 @@ import 'react-slideshow-image/dist/styles.css'
 const slideImages = [
 
     {
-        url: 'slideshow/batman.jpg',
+        url: 'slideshow/slide1.jpg',
        
     },
     {
-        url: 'slideshow/batman1.jpg',
+        url: 'slideshow/slide2.jpg',
       
     },
     {
-        url: 'slideshow/batman2.jpg',
+        url: 'slideshow/slide3.jpg',
     },
 ]
 function Slidebar() {
