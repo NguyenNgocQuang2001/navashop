@@ -4,7 +4,7 @@ import { Home } from "./components/home";
 import { Profile } from "./components/profile";
 import { ProductPage } from "./components/productDetail";
 import { Navbar } from "./components/navbar"
-
+import { Footer } from "./components/footer"
 
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
 				<Route path="/profile" element={<Profile />} />
 				<Route path="/product/:id" element={<ProductPage /> } />
 			</Routes>
+			<Footer />
 		</>
 	)
 }
