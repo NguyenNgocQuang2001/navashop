@@ -5,6 +5,7 @@ import { Profile } from "./components/profile";
 import { ProductPage } from "./components/productDetail";
 import { Navbar } from "./components/navbar"
 import { Footer } from "./components/footer"
+import {Bag} from "./components/bag";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
 				<Route path="/sale" element={<Home />} />
 				<Route path="/profile" element={<Profile />} />
 				<Route path="/product/:id" element={<ProductPage /> } />
+				<Route path="/bag" element={<Bag/>} />
 			</Routes>
 			<Footer />
 		</>
