@@ -22,9 +22,7 @@ function App() {
 				<Route path="/selling" element={<Home />} />
 				<Route path="/newproduct" element={<Home />} />
 				<Route path="/sale" element={<Home />} />
-				<Route path="/profile" element={<Profile />} />
 				<Route path="/product/:id" element={<ProductPage /> } />
-				<Route path="/bag" element={<Bag/>} />
 			</Routes>
 			<Footer />
 		</>

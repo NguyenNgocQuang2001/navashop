@@ -36,7 +36,7 @@ function Bag() {
                     products.map((element, index) => {
                         element.total=element.count*element.price;
                         return (
-                            <tr>
+                            <tr key={index}>
                                 <td>
                                     <button className={styles.remove}>
                                     </button>
