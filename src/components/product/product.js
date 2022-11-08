@@ -31,7 +31,7 @@ function Product() {
                                     />
                                 </div>
                                 <img src="https://hstatic.net/744/1000088744/1/2016/5-7/img_8.1_c81885b0-b737-46c7-472c-c95992e52869_grande.jpg" />
-                                <p>batman vs joker</p>
+                                <p>Áo Chery thời trang</p>
                                 <p>
                                     &nbsp;
                                     &nbsp;
@@ -40,7 +40,7 @@ function Product() {
                                     &nbsp;
                                     <span>
                                         300.000d
-                                    </span>
+                                    </span> 
                                 </p>
                             </div>
                         </Link>
