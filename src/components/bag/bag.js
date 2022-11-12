@@ -1,5 +1,5 @@
 import styles from "./bag.module.scss"
-
+import { BagDeltail } from "../bagDetail"
 
 const products = [
     {
@@ -18,6 +18,7 @@ const products = [
     }
 
 ]
+
 function Bag() {
 
     return (
@@ -36,7 +37,7 @@ function Bag() {
                     products.map((element, index) => {
                         element.total=element.count*element.price;
                         return (
-                            <tr key={index}>
+                            <tr>
                                 <td>
                                     <button className={styles.remove}>
                                     </button>

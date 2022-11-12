@@ -1,0 +1,79 @@
+.bagDeltail {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: inline-block;
+    width: 100%;
+    overflow-y: scroll;
+    height: 700px;
+}
+
+.tableProduct {
+    width: 100%;
+}
+
+table,
+tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    text-align: center;
+    border: 1px solid black;
+}
+
+// button {
+//     background-color: #4CAF50;
+//     border: none;
+//     color: white;
+//     padding: 15px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-size: 16px;
+//     width: 100%;
+// }
+
+.remove{
+    margin-left:auto;
+    width: 50px;
+    height: 50px;
+}
+
+.product
+{
+    height: 300px;
+}
+.headerTable
+{
+    height: 50px;
+    font-size: 25px;
+}
+
+.imageProduct
+{
+    height:250px;
+}
+
+.removeButton
+{
+    text-align: center;
+    border: 1px,solid
+}
+
+.nameProduct{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.bottom
+{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.bottomContent
+{
+    width: 33%;
+    display: inline-block;
+}
