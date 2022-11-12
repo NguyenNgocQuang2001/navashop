@@ -21,7 +21,7 @@ function Navbar() {
                 <div 
                     className={clsx(styles.navbar__item, {
 
-                        [styles.active]: page == 1
+                        [styles.active]: page === 1
                     })}
                     onClick={() => setPage(1)}
                 >Trang chủ</div>
@@ -33,7 +33,7 @@ function Navbar() {
                 <div 
                     className={clsx(styles.navbar__item, {
 
-                        [styles.active]: page == 2
+                        [styles.active]: page === 2
                     })}
                     onClick={() => setPage(2)}
                 >
@@ -48,7 +48,7 @@ function Navbar() {
                 <div 
                     className={clsx(styles.navbar__item, {
 
-                        [styles.active]: page == 3
+                        [styles.active]: page === 3
                     })}
                     onClick={() => setPage(3)}
                 >
@@ -62,7 +62,7 @@ function Navbar() {
                 <div 
                     className={clsx(styles.navbar__item, {
 
-                        [styles.active]: page == 4
+                        [styles.active]: page === 4
                     })}
                     onClick={() => setPage(4)}
                 >
@@ -72,7 +72,7 @@ function Navbar() {
             <input className={styles.navbar_input} type="text" placeholder="Tìm kiếm" />
             <SearchIcon className={styles.navbar__search} />
             <Link 
-                to="/bag"
+                to="/user/bag"
                 className={styles.link}
             >
                 <ShoppingCartIcon className={styles.navbar__card_shopping} />

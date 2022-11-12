@@ -1,15 +1,14 @@
 import { Header } from "./components/header";
 import { Route, Routes } from 'react-router-dom'
 import { Home } from "./components/home";
-import { Profile } from "./components/profile";
 import { ProductPage } from "./components/productDetail";
 import { Navbar } from "./components/navbar"
 import { Footer } from "./components/footer"
-import {Bag} from "./components/bag";
-
+import { UserBag } from "./components/userBag";
 
 function App() {
 
+	
 	return (
 		
 		<>
@@ -22,9 +21,8 @@ function App() {
 				<Route path="/selling" element={<Home />} />
 				<Route path="/newproduct" element={<Home />} />
 				<Route path="/sale" element={<Home />} />
-				<Route path="/profile" element={<Profile />} />
 				<Route path="/product/:id" element={<ProductPage /> } />
-				<Route path="/bag" element={<Bag/>} />
+				<Route path="/:id/bag" element={<UserBag /> } />
 			</Routes>
 			<Footer />
 		</>

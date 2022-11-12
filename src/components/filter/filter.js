@@ -29,7 +29,7 @@ function Filter() {
                     <span 
                         className={clsx(styles.filter__text, {
                             
-                            [styles.active]: param == 1
+                            [styles.active]: param === 1
                         })}
                         onClick={() => setParam(1)}
                     >
@@ -44,7 +44,7 @@ function Filter() {
                     <span
                         className={clsx(styles.filter__text, {
                                 
-                            [styles.active]: param == 2
+                            [styles.active]: param === 2
                         })}
                         onClick={() => setParam(2)}
                     >
@@ -59,7 +59,7 @@ function Filter() {
                     <span
                         className={clsx(styles.filter__text, {
                             
-                            [styles.active]: param == 3
+                            [styles.active]: param === 3
                         })}
                         onClick={() => setParam(3)}
                     >
