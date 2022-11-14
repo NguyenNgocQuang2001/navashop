@@ -11,13 +11,13 @@ function Header() {
                 to="/"
                 className={styles.link}
             >
-                <img className={styles.logo} src="/logo-nava.png" alt="no image" />
+                <img className={styles.logo} src="/logo-nava.png" alt="not found" />
             </Link>
             <Link 
-                to="/profile"
+                to="/user/profile"
                 className={styles.link}
             >
-                <img className={styles.avatar} src="/chohusky.jpg" alt="no images" />
+                <img className={styles.avatar} src="/chohusky.jpg" alt="not found" />
             </Link>
         </div>
     )

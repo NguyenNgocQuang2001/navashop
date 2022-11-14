@@ -1,7 +1,8 @@
-import styles from "./bagDeltail.module.scss"
+import styles from "./userBag.module.scss"
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import UserNavBar from "../userNavbar/userNavbar"
 
 const products = [
     {
@@ -34,7 +35,8 @@ const products = [
     }
 
 ]
-function BagDeltail() {
+
+function UserBag() {
 
     const [change, setChange] = useState(false)
     const removeProduct = (index) => {
@@ -50,9 +52,10 @@ function BagDeltail() {
 
     var totalMoney = 0;
 
-    return (
-        <div>
-            <div className={styles.bagDeltail}>
+    return ( 
+       <div className={styles.user__bag}>
+            <UserNavBar />
+            <div className={styles.bag}>
                 <table className={styles.tableProduct}>
                     <tr className={styles.headerTable}>
                         <th></th>
@@ -67,7 +70,10 @@ function BagDeltail() {
                             element.total = element.count * element.price;
                             totalMoney += element.total
                             return (
-                                <tr className={styles.product}>
+                                <tr 
+                                    className={styles.product}
+                                    key={index}
+                                >
                                     <td className={styles.removeButton}>
                                         <HighlightOffIcon
                                             onClick={() => removeProduct(index)}
@@ -75,7 +81,11 @@ function BagDeltail() {
 
                                     </td>
                                     <td>
-                                        <img src={element.image} className={styles.imageProduct} />
+                                        <img 
+                                            src={element.image}
+                                            className={styles.imageProduct}
+                                            alt="not found"
+                                        />
                                     </td>
                                     <td className={styles.nameProduct}>
                                         {element.name}
@@ -117,4 +127,4 @@ function BagDeltail() {
     )
 }
 
-export default BagDeltail
+export default UserBag

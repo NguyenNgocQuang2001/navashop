@@ -18,10 +18,10 @@ function Product() {
                         <Link 
                             to="/product/joker"
                             className={styles.link}
+                            key={index}
                         >
                             <div 
-                                className={ (index % 4 != 3 ? styles.product__item : clsx(styles.product__item, styles.product__last__item)) }
-                                key={index}
+                                className={ (index % 4 !== 3 ? styles.product__item : clsx(styles.product__item, styles.product__last__item)) }
                             >
                                 <div className={styles.card__shopping}>
 
@@ -30,7 +30,10 @@ function Product() {
                                         className={styles.shopping__bag__icon}
                                     />
                                 </div>
-                                <img src="https://hstatic.net/744/1000088744/1/2016/5-7/img_8.1_c81885b0-b737-46c7-472c-c95992e52869_grande.jpg" />
+                                <img 
+                                    src="https://hstatic.net/744/1000088744/1/2016/5-7/img_8.1_c81885b0-b737-46c7-472c-c95992e52869_grande.jpg"
+                                    alt="not found"
+                                />
                                 <p>batman vs joker</p>
                                 <p>
                                     &nbsp;
