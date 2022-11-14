@@ -1,14 +1,23 @@
 .user__bag {
 
     display: flex;
-    
-    .bag {
-        margin-top: 40px;
-        margin-bottom: 40px;
-        display: inline-block;
-        width: calc(100% - 200px);
-        overflow-y: scroll;
-        height: 700px;
+    margin-left: 150px;
+    margin-right: 150px;
+
+    .bags {
+
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 220px);
+
+        .bag {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            display: inline-block;
+            width: 100%;
+            overflow-y: scroll;
+            height: 700px;
+        }
     }
 }
 

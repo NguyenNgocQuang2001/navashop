@@ -55,72 +55,76 @@ function UserBag() {
     return ( 
        <div className={styles.user__bag}>
             <UserNavBar />
-            <div className={styles.bag}>
-                <table className={styles.tableProduct}>
-                    <tr className={styles.headerTable}>
-                        <th></th>
-                        <th></th>
-                        <th>SẢN PHẨM</th>
-                        <th>ĐƠN GIÁ</th>
-                        <th>SỐ LƯỢNG</th>
-                        <th>TỔNG</th>
-                    </tr>
-                    {
-                        products.map((element, index) => {
-                            element.total = element.count * element.price;
-                            totalMoney += element.total
-                            return (
-                                <tr 
-                                    className={styles.product}
-                                    key={index}
-                                >
-                                    <td className={styles.removeButton}>
-                                        <HighlightOffIcon
-                                            onClick={() => removeProduct(index)}
-                                        />
-
-                                    </td>
-                                    <td>
-                                        <img 
-                                            src={element.image}
-                                            className={styles.imageProduct}
-                                            alt="not found"
-                                        />
-                                    </td>
-                                    <td className={styles.nameProduct}>
-                                        {element.name}
-                                    </td>
-                                    <td>
-                                        {element.price}<u>đ</u>
-                                    </td>
-                                    <td>
-                                        <input type="number" min="0" value={element.count}
-                                            onChange={(e) => ChangCount(index, e.target.value)}
-                                        />
-
-                                    </td>
-                                    <td>
-                                        {element.total}<u>đ</u>
-                                    </td>
-                                </tr>
-                            )
-                        })
-                    }
-                </table>
-            </div>
-            <div className={styles.bottom}>
-                <div className={styles.bottomContent}>
-                    <button onClick={() => navigate(-1)}>Quay lại</button>
-                </div>
-                <div className={styles.bottomContent}>
-                    <button>Đặt hàng</button>
-                </div>
-                <div className={styles.bottomContent}>
-                    <p>
+            <div 
+                className={styles.bags}
+            >
+                <div className={styles.bag}>
+                    <table className={styles.tableProduct}>
+                        <tr className={styles.headerTable}>
+                            <th></th>
+                            <th></th>
+                            <th>SẢN PHẨM</th>
+                            <th>ĐƠN GIÁ</th>
+                            <th>SỐ LƯỢNG</th>
+                            <th>TỔNG</th>
+                        </tr>
                         {
-                            "Tổng đơn hàng: "+totalMoney
-                        }<u>đ</u>
-                    </p>
+                            products.map((element, index) => {
+                                element.total = element.count * element.price;
+                                totalMoney += element.total
+                                return (
+                                    <tr 
+                                        className={styles.product}
+                                        key={index}
+                                    >
+                                        <td className={styles.removeButton}>
+                                            <HighlightOffIcon
+                                                onClick={() => removeProduct(index)}
+                                            />
+
+                                        </td>
+                                        <td>
+                                            <img 
+                                                src={element.image}
+                                                className={styles.imageProduct}
+                                                alt="not found"
+                                            />
+                                        </td>
+                                        <td className={styles.nameProduct}>
+                                            {element.name}
+                                        </td>
+                                        <td>
+                                            {element.price}<u>đ</u>
+                                        </td>
+                                        <td>
+                                            <input type="number" min="0" value={element.count}
+                                                onChange={(e) => ChangCount(index, e.target.value)}
+                                            />
+
+                                        </td>
+                                        <td>
+                                            {element.total}<u>đ</u>
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </table>
+                </div>
+                <div className={styles.bottom}>
+                    <div className={styles.bottomContent}>
+                        <button onClick={() => navigate(-1)}>Quay lại</button>
+                    </div>
+                    <div className={styles.bottomContent}>
+                        <button>Đặt hàng</button>
+                    </div>
+                    <div className={styles.bottomContent}>
+                        <p>
+                            {
+                                "Tổng đơn hàng: "+totalMoney
+                            }<u>đ</u>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ import { Navbar } from "./components/navbar"
 import { Footer } from "./components/footer"
 import { UserBag } from "./components/userBag";
 import {Profile} from "./components/profile"
+
 function App() {
 
 	
