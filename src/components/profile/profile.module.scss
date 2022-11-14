@@ -1,25 +1,20 @@
-.buttons{
-    width: 20%;
-    display: inline-block;
-    vertical-align:top;
-}
-
-.content{
-    width: 80%;
-    display: inline-block;
-}
-
 .profile{
-    margin-left: 150px;
-    margin-right: 150px;
-}
-.divbutton{
-   padding-top: 40px;
-   text-align: left;
-}
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    .title
+    {
 
-button
-{
-    width: 90%;
-    height: 70px;
+    }
+    .infor
+    {
+        display: flex;
+    }
+    .leftPane{
+
+    }
+    .rightPane{
+
+    }
+
 }
