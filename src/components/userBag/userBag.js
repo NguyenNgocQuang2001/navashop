@@ -113,10 +113,19 @@ function UserBag() {
                 </div>
                 <div className={styles.bottom}>
                     <div className={styles.bottomContent}>
-                        <button onClick={() => navigate(-1)}>Quay lại</button>
+                        <button
+                            className={styles.button}
+                            onClick={() => navigate(-1)}
+                        >
+                            Quay lại
+                        </button>
                     </div>
                     <div className={styles.bottomContent}>
-                        <button>Đặt hàng</button>
+                        <button
+                            className={styles.button}
+                        >
+                            Đặt hàng
+                        </button>
                     </div>
                     <div className={styles.bottomContent}>
                         <p>
