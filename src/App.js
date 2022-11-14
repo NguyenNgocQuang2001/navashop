@@ -5,7 +5,7 @@ import { ProductPage } from "./components/productDetail";
 import { Navbar } from "./components/navbar"
 import { Footer } from "./components/footer"
 import { UserBag } from "./components/userBag";
-
+import {Profile} from "./components/profile"
 function App() {
 
 	
@@ -23,6 +23,7 @@ function App() {
 				<Route path="/sale" element={<Home />} />
 				<Route path="/product/:id" element={<ProductPage /> } />
 				<Route path="/:id/bag" element={<UserBag /> } />
+				<Route path="/:id/profile" element={<Profile /> } />
 			</Routes>
 			<Footer />
 		</>
