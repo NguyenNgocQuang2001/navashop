@@ -18,17 +18,21 @@
             width: 100%;
             overflow-y: scroll;
             height: 700px;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         }
 
         .bag::-webkit-scrollbar {
             display: none;
         }
+
     }
 
     .button {
 
         width: 150px;
         height: 50px;
+        border-radius: 10px;
     }
 
     .button:hover {
