@@ -52,8 +52,8 @@ function UserBag() {
 
     var totalMoney = 0;
 
-    return (
-        <div>
+    return ( 
+       <div className={styles.user__bag}>
             <UserNavBar />
             <div className={styles.bag}>
                 <table className={styles.tableProduct}>

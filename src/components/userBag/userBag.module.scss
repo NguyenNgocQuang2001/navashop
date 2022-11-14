@@ -1,10 +1,15 @@
-.bag {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    display: inline-block;
-    width: calc(100% - 200px);
-    overflow-y: scroll;
-    height: 700px;
+.user__bag {
+
+    display: flex;
+    
+    .bag {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        display: inline-block;
+        width: calc(100% - 200px);
+        overflow-y: scroll;
+        height: 700px;
+    }
 }
 
 .tableProduct {
@@ -22,17 +27,6 @@ td {
     border: 1px solid black;
 }
 
-// button {
-//     background-color: #4CAF50;
-//     border: none;
-//     color: white;
-//     padding: 15px 32px;
-//     text-align: center;
-//     text-decoration: none;
-//     display: inline-block;
-//     font-size: 16px;
-//     width: 100%;
-// }
 
 .remove{
     margin-left:auto;

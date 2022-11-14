@@ -1,4 +1,5 @@
 import styles from "./userNavbar.module.scss"
+import { Link } from "react-router-dom"
 
 function UserNavbar() {
 
@@ -6,17 +7,42 @@ function UserNavbar() {
 
         <div className={styles.navbar__user}>
 
-            <div className={styles.buttons}>
-            
-                <div className={styles.divbutton}>
-                <button >Thông tin tài khoản</button>
-                    </div>
-                <div className={styles.divbutton}><button>Giỏ hàng</button></div>
-                <div className={styles.divbutton}><button>Đơn hàng</button></div>
-                <div className={styles.divbutton}><button>Lịch sử mua hàng</button></div>
-                </div>
-                <div className={styles.content}>
-            </div>
+            <Link 
+                to="/:id/profile"
+            >
+                <button
+                    className={styles.navbar__item}
+                >
+                    Thông tin tài khoản
+                </button>
+            </Link>
+            <Link 
+                to="/:id/bag"
+            >
+                <button
+                    className={styles.navbar__item}
+                >
+                    Giỏ hàng
+                </button>
+            </Link>
+            <Link 
+                to="/:id/order"
+            >
+                <button
+                    className={styles.navbar__item}
+                >
+                    Đơn hàng
+                </button>
+            </Link>
+            <Link 
+                to="/:id/history"
+            >
+                <button
+                    className={styles.navbar__item}
+                >
+                    Lịch sử mua hàng
+                </button>
+            </Link>
         </div>
     )
 }
