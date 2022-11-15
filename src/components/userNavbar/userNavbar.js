@@ -4,24 +4,27 @@ import clsx from "clsx"
 import { useState } from "react"
 
 
-var params = window.location.pathname.split('/')[2].trim()
-if (params === "profile") {
-
-    params = 1
-} else if (params === "bag") {
-
-    params = 2
-} else if(params === "order") {
-
-    params = 3
-} else if (params === "history") {
-
-    params = 4
-}
 
 function UserNavbar() {
 
-
+    var params = window.location.pathname.split('/')
+    if (params.length > 2) {
+    
+        params = params[2].trim()
+        if (params === "profile") {
+    
+            params = 1
+        } else if (params === "bag") {
+        
+            params = 2
+        } else if(params === "order") {
+        
+            params = 3
+        } else if (params === "history") {
+        
+            params = 4
+        }
+    }
     const [param, setParam] = useState(params)
     
     return (

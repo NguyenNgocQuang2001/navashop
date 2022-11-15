@@ -48,7 +48,7 @@ function Profile() {
                 <button></button>
             </div>
             <div className={styles.rightPane}>
-                <img></img>
+                {/* <img></img> */}
                 <button >Show Images</button>
                 <p>Dụng lượng file tối đa 1 MB<br/>Định dạng:.JPEG, .PNG</p>
             </div>

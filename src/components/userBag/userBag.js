@@ -33,7 +33,6 @@ const products = [
         count: "2",
         total: "850,000đ"
     }
-
 ]
 
 function UserBag() {
