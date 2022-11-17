@@ -1,7 +1,7 @@
-import styles from "./history.module.scss"
+import styles from "./order.module.scss"
 import { Link } from "react-router-dom"
 
-const order = [
+const orders = [
     {
         image: "/Image/aovetcongso.jpg",
         name: "Áo Vest Công Sở",
@@ -32,15 +32,15 @@ const order = [
     }
 ]
 
-function History() {
+function Order() {
 
     return (
 
         <div
-            className={styles.history}
+            className={styles.order}
         >
             <div
-                className={styles.infor__history}
+                className={styles.infor__order}
             >
                 <div
                     className={styles.info__order}
@@ -55,7 +55,7 @@ function History() {
                 <div
                     className={styles.info__order}
                 >
-                    Ngay giao : 16/11/2022 15:29
+                    Trang thai : dang giao
                 </div>
                 <div
                     className={styles.info__order}
@@ -67,7 +67,7 @@ function History() {
                 >
                     Tong gia tri don hang : {
 
-                        order.reduce((total, value, index) => {
+                        orders.reduce((total, value, index) => {
 
                             return total + value.count * value.price
                         }, 0)
@@ -75,12 +75,12 @@ function History() {
                 </div>
             </div>
             {
-                order.map((item, index) => {
+                orders.map((item, index) => {
 
                     return (
 
                         <div 
-                            className={styles.history__item}
+                            className={styles.order__item}
                             key={index}
                         >
                             <Link
@@ -119,4 +119,4 @@ function History() {
     )
 }
 
-export default History
+export default Order

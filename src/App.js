@@ -7,6 +7,7 @@ import { Footer } from "./components/footer"
 import { UserBag } from "./components/userBag";
 import {Profile} from "./components/profile"
 import { UserHistory } from "./components/userHistory";
+import { UserOrder } from "./components/useOrder";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
 				<Route path="/product/:id" element={<ProductPage /> } />
 				<Route path="/:id/bag" element={<UserBag /> } />
 				<Route path="/:id/profile" element={<Profile /> } />
+				<Route path="/:id/order" element={<UserOrder /> } />
 				<Route path="/:id/history" element={<UserHistory /> } />
 			</Routes>
 			<Footer />
