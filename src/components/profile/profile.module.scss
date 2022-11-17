@@ -1,20 +1,117 @@
 .profile{
-    display: flex;
-    flex-direction: column;
-    margin: 50px;
-    .title
-    {
+    
+    margin-top: 40px;
+    margin-left: 20px;
+    width: calc(100% - 220px);
 
-    }
-    .infor
-    {
+
+    .infor {
+
         display: flex;
-    }
-    .leftPane{
+        flex-direction: row;
+        height: 60px;
+        width: 100%;
+        margin-bottom: 10px;
+
+
+        .infor__tag {
+
+            width: 200px;
+            font-size: 20px;
+            padding-top: 15px;
+            padding-left: 60px;      
+        }
+
+        .infor__input {
+
+            width: calc(100% - 200px);
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+
+            .input {
+
+                width: calc(100% - 200px);
+                height: 30px;
+                text-decoration: none;
+                outline: none;
+                font-size: 18px;
+            }
+
+
+            .input__radio {
+
+                width: 20px;
+                height: 20px;
+            }
+
+            .label {
+
+                margin-right: 100px;
+                margin-left: 12px;
+                font-size: 18px;
+                padding-top: 3px;
+            }
+        }
 
     }
-    .rightPane{
 
+    .button {
+
+        height: 50px;
+        width: 300px;
+        padding-left: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+
+        .save {
+
+            height: 50px;
+            width: 100px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.637);
+        }
+
+        .save:hover {
+
+            background-color: rgba(95, 240, 38, 0.801);
+        }
     }
 
+    .avatar {
+
+        margin-left: 60px;
+        display: flex;
+        flex-direction: column;
+        .image {
+
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .input__image {
+
+            display: none;
+        }
+
+        .choice__image {
+
+            margin-top: 30px;
+            margin-left: 100px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.445);
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .choice__image:hover {
+
+            background-color: yellowgreen;
+        }
+    }
 }
