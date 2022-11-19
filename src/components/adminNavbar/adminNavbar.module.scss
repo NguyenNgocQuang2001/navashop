@@ -1,0 +1,26 @@
+.navbar__admin {
+
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+
+    .navbar__item:first-child {
+
+        margin-top: 40px;
+    }
+
+    .navbar__item {
+
+        width: 210px;
+        height: 60px;
+        margin-top: 15px;
+        margin-right: 10px;
+        border-radius: 10px;
+    }
+
+}
+
+.active {
+
+    background-color: rgba(11, 192, 11, 0.849);
+}

@@ -1,4 +1,4 @@
-.profile{
+.add__product {
     
     margin-top: 40px;
     margin-left: 20px;
@@ -55,6 +55,38 @@
         }
     }
 
+    .infor__textarea {
+
+        
+        display: flex;
+        flex-direction: row;
+        height: 160px;
+        width: 100%;
+        margin-bottom: 20px;
+
+        .infor__tag {
+
+            width: 200px;
+            font-size: 20px;
+            padding-top: 15px;
+            padding-left: 60px;      
+        }
+
+        .infor__input {
+
+            width: calc(100% - 200px);
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+
+            .textarea {
+
+                width: calc(100% - 200px);
+                height: 150px;
+            }
+        }
+    }
+
     .button {
 
         height: 50px;
@@ -79,15 +111,16 @@
         }
     }
 
-    .avatar {
+    .image__product {
 
         margin-left: 60px;
         display: flex;
         flex-direction: column;
+
         .image {
 
             width: 300px;
-            height: 300px;
+            height: 400px;
             object-fit: cover;
         }
         

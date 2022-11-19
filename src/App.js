@@ -7,7 +7,9 @@ import { Footer } from "./components/footer"
 import { UserBag } from "./components/userBag";
 import { UserHistory } from "./components/userHistory";
 import { UserOrder } from "./components/useOrder";
-import UserProfile from "./components/userProfile/userProfile";
+import { UserProfile } from "./components/userProfile";
+import { AdminProfile } from "./components/adminProfile";
+import { AdminProduct } from "./components/adminProduct";
 
 function App() {
 
@@ -29,6 +31,8 @@ function App() {
 				<Route path="/:id/profile" element={<UserProfile /> } />
 				<Route path="/:id/order" element={<UserOrder /> } />
 				<Route path="/:id/history" element={<UserHistory /> } />
+				<Route path="/admin/profile" element={<AdminProfile /> } />
+				<Route path="/admin/addproduct" element={<AdminProduct /> } />
 			</Routes>
 			<Footer />
 		</>
