@@ -10,6 +10,8 @@ import { UserOrder } from "./components/useOrder";
 import { UserProfile } from "./components/userProfile";
 import { AdminProfile } from "./components/adminProfile";
 import { AdminProduct } from "./components/adminProduct";
+import { AdminCustomer } from "./components/adminCustomer";
+import { AdminStatistical } from "./components/adminStatistical";
 
 function App() {
 
@@ -33,6 +35,8 @@ function App() {
 				<Route path="/:id/history" element={<UserHistory /> } />
 				<Route path="/admin/profile" element={<AdminProfile /> } />
 				<Route path="/admin/addproduct" element={<AdminProduct /> } />
+				<Route path="/admin/customers" element={<AdminCustomer /> } />
+				<Route path="/admin/statistical" element={<AdminStatistical /> } />
 			</Routes>
 			<Footer />
 		</>
