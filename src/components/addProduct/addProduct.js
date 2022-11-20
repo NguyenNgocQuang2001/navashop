@@ -23,7 +23,7 @@ function AddProduct() {
                 />
                 <label
                     className={styles.choice__image}
-                    for="avatar"
+                    htmlFor="avatar"
                 >
                     Chon anh
                 </label>

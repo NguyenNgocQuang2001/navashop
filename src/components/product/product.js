@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 function Product() {
 
-    const items = [0, 0, 0, 0, 0, 0, 0, 0]
+    const items = [0, 0, 0, 0, 0, 0, 0]
 
     return (
 
