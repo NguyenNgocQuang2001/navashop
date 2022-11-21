@@ -12,6 +12,7 @@ import { AdminProfile } from "./components/adminProfile";
 import { AdminProduct } from "./components/adminProduct";
 import { AdminCustomer } from "./components/adminCustomer";
 import { AdminStatistical } from "./components/adminStatistical";
+import { Introduce } from "./components/introduce";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/home" element={<Home />} />
 				<Route path="/product" element={<Home />} />
+				<Route path="/introduce" element={<Introduce />} />
 				<Route path="/selling" element={<Home />} />
 				<Route path="/newproduct" element={<Home />} />
 				<Route path="/sale" element={<Home />} />

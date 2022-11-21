@@ -1,4 +1,5 @@
 import { AdminNavbar } from "../adminNavbar"
+import { Statistical } from "../statistical"
 import styles from "./adminStatistical.module.scss"
 
 function AdminStatistical() {
@@ -9,6 +10,7 @@ function AdminStatistical() {
             className={styles.admin__statistical}
         >
             <AdminNavbar />
+            <Statistical />
         </div>
     )
 }
