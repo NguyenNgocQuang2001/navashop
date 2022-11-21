@@ -8,7 +8,7 @@ import { UserBag } from "./components/userBag";
 import { UserHistory } from "./components/userHistory";
 import { UserOrder } from "./components/useOrder";
 import UserProfile from "./components/userProfile/userProfile";
-
+import { Introduce } from "./components/introduce";
 function App() {
 
 	
@@ -21,6 +21,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/home" element={<Home />} />
 				<Route path="/product" element={<Home />} />
+				<Route path="/introduce" element={<Introduce />} />
 				<Route path="/selling" element={<Home />} />
 				<Route path="/newproduct" element={<Home />} />
 				<Route path="/sale" element={<Home />} />
