@@ -1,7 +1,6 @@
-@import "./menubar.module.scss";
+@import './menubar.module.scss';
 
 .navbar {
-
     margin-left: 150px;
     margin-right: 150px;
     height: 50px;
@@ -10,9 +9,9 @@
     display: flex;
     cursor: pointer;
     position: relative;
+    margin-top: 150px;
 
     .navbar__item {
-
         color: #ffffff;
         text-align: center;
         width: 120px;
@@ -21,7 +20,6 @@
         position: relative;
 
         .navbar__menubar {
-
             //display: none;
             position: absolute;
             top: 60px;
@@ -35,8 +33,7 @@
         }
 
         .navbar__menubar::before {
-
-            content: "";
+            content: '';
             -webkit-transform: rotate(45deg) translateY(-50%);
             -moz-transform: rotate(45deg) translateY(-50%);
             -ms-transform: rotate(45deg) translateY(-50%);
@@ -51,25 +48,21 @@
             left: 150px;
             transition: width 1s, height 1s;
         }
-
     }
 
     .navbar__item:hover > .navbar__menubar {
-
         //display: block;
         width: calc(100vw - 615px);
         height: 250px;
     }
 
     .navbar__item:hover > .navbar__menubar::before {
-
         width: 30px;
         height: 30px;
     }
 
     .navbar__item::before {
-
-        content: "";
+        content: '';
         height: 3px;
         position: absolute;
         bottom: 0px;
@@ -83,17 +76,14 @@
     }
 
     .navbar__item:hover::before {
-
-       width: 110px;
+        width: 110px;
     }
 
     .active::before {
-
         width: 110px;
     }
 
     .navbar__card_shopping {
-
         color: rgb(230, 209, 25);
         position: absolute;
         right: 8px;
@@ -102,12 +92,10 @@
     }
 
     .navbar__card_shopping:hover {
-
         color: rgb(255, 0, 0);
     }
 
     .navbar__search {
-
         color: rgba(0, 0, 0, 0.719);
         position: absolute;
         right: 60px;
@@ -118,12 +106,10 @@
     }
 
     .navbar__search:hover {
-
         color: rgba(255, 0, 119, 0.507);
     }
 
     .navbar_input {
-
         width: 90px;
         height: 46px;
         border: 1px solid #212121;
@@ -136,7 +122,6 @@
     }
 
     .navbar_input:focus {
-
         width: 250px;
     }
 }
