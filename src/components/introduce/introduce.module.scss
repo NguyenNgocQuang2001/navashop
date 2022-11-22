@@ -1,0 +1,80 @@
+.introduce
+{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column
+}
+.topContent{
+
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+    .leftContent{
+
+    }
+    .rightContent{
+
+    }
+}
+.midleContent{
+    display: flex;
+    flex-direction: row;
+    text-align:center;
+    margin-bottom: 50px;
+}
+.midleContentItem{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    border-width: 1px;
+    border-style: solid;
+    margin: 10px;
+    padding: 50px;
+}
+
+.botContent{
+    background-image:url("../../../public/Image/backGround.jpg"); 
+    background-size: cover;
+    background-position: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+}
+
+.inputEmail{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.botInput{
+    background-color: transparent;
+    color: white;
+    border: 1px solid   white;
+    height: 100%;
+    width: 80%;
+    margin-left: 200px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0 30px 0 30px;
+}
+.botButton
+{
+    height: 52px;
+    width: 20%;
+    border: 1px solid   white;;
+    margin-right: 200px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.botButton:hover
+{
+    background-color:#FFCC33
+}
