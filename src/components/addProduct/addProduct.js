@@ -20,6 +20,7 @@ function AddProduct() {
                     className={styles.input__image}
                     type="file"
                     id="avatar"
+                    multiple
                 />
                 <label
                     className={styles.choice__image}

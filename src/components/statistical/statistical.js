@@ -61,6 +61,7 @@ function Statistical() {
                     options={optionSex}
                 />
             </div>
+            
         </div>
     )
 }

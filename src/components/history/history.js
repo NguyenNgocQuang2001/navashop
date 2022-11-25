@@ -65,6 +65,11 @@ function History() {
                 <div
                     className={styles.info__order}
                 >
+                    Dia chi: So nha 19, Quan Hoang Mai, Ha Noi
+                </div>
+                <div
+                    className={styles.info__order}
+                >
                     Tong gia tri don hang : {
 
                         order.reduce((total, value, index) => {

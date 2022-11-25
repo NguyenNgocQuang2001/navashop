@@ -65,6 +65,11 @@ function Order() {
                 <div
                     className={styles.info__order}
                 >
+                    Dia chi: So nha 19, Quan Hoang Mai, Ha Noi
+                </div>
+                <div
+                    className={styles.info__order}
+                >
                     Tong gia tri don hang : {
 
                         orders.reduce((total, value, index) => {
@@ -115,6 +120,15 @@ function Order() {
                     )
                 })
             }
+            <div
+                className={styles.cancel}
+            >
+                <button
+                    className={styles.button__cancel}
+                >
+                    Huy don hang
+                </button>
+            </div>
         </div>
     )
 }

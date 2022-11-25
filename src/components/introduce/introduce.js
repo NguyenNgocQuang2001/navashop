@@ -28,24 +28,36 @@ function Introduce() {
                         </div>
                     </div>
                     <div className={styles.rightContent}>
-                        <img src="/Image/Introduce.png"/>
+                        <img 
+                            src="/Image/Introduce.png"
+                            alt="not found"
+                        />
                     </div>
                 </div>
 
                 <div className={styles.midleContent}>
 
                     <div className={styles.midleContentItem}>
-                        <img src="/Image/transport.png" />
+                        <img 
+                            src="/Image/transport.png"
+                            alt="not found"
+                        />
                         <p>MIỄN PHÍ VẬN CHUYỂN</p>
                     </div>
 
                     <div className={styles.midleContentItem}>
-                        <img src="/Image/contact.png"/>
+                        <img
+                            src="/Image/contact.png"
+                            alt="not found"    
+                        />
                         <p>HỖ TRỢ KHÁCH HÀNG 24/7</p>
                     </div>
 
                     <div className={styles.midleContentItem}>
-                        <img src="/Image/refund.png" />
+                        <img
+                            src="/Image/refund.png"
+                            alt="not found"
+                        />
                         <p>HOÀN TIỀN 100%</p>
                     </div>
 
