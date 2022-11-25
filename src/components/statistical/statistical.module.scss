@@ -2,6 +2,7 @@
 
     margin-top: 40px;
     margin-left: 20px;
+    width: 100%;
     .select {
 
         width: 100%;
@@ -12,6 +13,66 @@
 
             margin-right: 50px;
             width: 250px;
+        }
+    }
+    
+    .sum__quantity {
+
+        margin-top: 25px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .sum__money {
+
+        margin-top: 15px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+
+    .products {
+
+        margin-top: 30px;
+        width: 100%;
+  
+        .product__item {
+
+            display: flex;
+            flex-direction: row;
+            height: 120px;
+            width: 100%;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.384);
+
+            .image {
+
+                height: 120px;
+                width: 90px;
+                object-fit: contain;
+            }
+
+            .info {
+
+                margin-left: 15px;
+    
+                .name {
+    
+                    margin-top: 10px;
+                    font-weight: 600;
+                    font-size: 23px;
+                }
+    
+                .quantity {
+    
+                    margin-top: 5px;
+                }
+    
+                .cost {
+    
+                    margin-top: 8px;
+                }
+            }
         }
     }
 }
