@@ -1,5 +1,13 @@
 import styles from "./addProduct.module.scss"
+import Select from "react-select"
 
+
+const optionType = [
+
+    { value: '1', label: 'Do nam' },
+    { value: '2', label: 'Do nu' },
+    { value: '3', label: 'Do doi' },
+]
 
 function AddProduct() {
 
@@ -43,6 +51,26 @@ function AddProduct() {
                     <input 
                         type="text"
                         className={styles.input}
+                    />
+                </div>
+            </div>
+            <div
+                className={styles.infor}
+            >
+                <div
+                    className={styles.infor__tag}
+                >
+                    Loai
+                </div>
+                <div
+                    className={styles.infor__input}
+                >
+                    <Select
+
+                        defaultValue={optionType[0]}
+                        className={styles.select__input}
+                        isSearchable={false}
+                        options={optionType}
                     />
                 </div>
             </div>
