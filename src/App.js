@@ -15,7 +15,7 @@ import { AdminStatistical } from './components/adminStatistical';
 import { Login } from './components/login';
 import { Signup } from './components/signup';
 import { Introduce } from "./components/introduce"
-
+import { Contact } from "./components/contact"
 function App() {
 
 
@@ -27,6 +27,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/introduce" element={<Introduce />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="/product" element={<Home />} />
                 <Route path="/selling" element={<Home />} />
                 <Route path="/newproduct" element={<Home />} />
