@@ -2,7 +2,7 @@
 {
     margin-left: 150px;
     margin-right: 150px;
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column
 }
@@ -14,10 +14,15 @@
     .leftContent{
 
         padding-right: 40px;
+        width: 50%;
     }
-    // .rightContent{
-
-    // }
+    .rightContent{
+        width: 50%;
+        .introduceImg
+        {
+            width: 100%
+        }
+    }
 }
 .midleContent{
     display: flex;
@@ -32,7 +37,9 @@
     border-width: 1px;
     border-style: solid;
     margin: 10px;
-    padding: 50px;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .botContent{

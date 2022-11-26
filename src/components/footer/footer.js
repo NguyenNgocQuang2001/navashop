@@ -7,8 +7,8 @@ function Footer() {
             <div className={styles.footer_item}>
                 <p className={styles.footer_item_tile}>VỀ CHÚNG TÔI</p>
                 <p><b>Địa chỉ :</b> C4 Nguyễn Cơ Thạch</p>
-                <p><b>Hotline :</b> (+84) 3 888 888</p>
-                <p><b>Email : </b> contact@lisashop.com</p>
+                <p><b>Hotline :</b> (+84) 328 966 733</p>
+                <p><b>Email : </b> contact@navashop.com</p>
             </div>
             <div className={styles.footer_item}>
                 <p className={styles.footer_item_tile}>XU HƯỚNG</p>
@@ -20,7 +20,7 @@ function Footer() {
                 <p className={styles.footer_item_tile}>MỞ CỬA</p>
 
                 <p>THỨ 2 - THỨ 7</p>
-                <p>Sáng 10:00 - Chiều 5:00</p>
+                <p>Sáng 7:00 - Tối 23:00</p>
                 <HistoryToggleOffIcon className={styles.clock}/>
             </div>
         </div>

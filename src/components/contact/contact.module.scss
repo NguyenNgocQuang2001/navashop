@@ -1,0 +1,58 @@
+.contact
+{
+    display: flex;
+    flex-direction: row;
+    margin: 50px 150px ;
+    .leftContent
+    {
+        width: 75%;
+        .leftContentFirstChild
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .inputName,.inputEmail,.inputPhone{
+                width: 30%;
+                height: 30px;
+                margin-top: 40x;
+                margin-bottom: 20px;
+            }
+        }
+        .inputEmail
+        {
+            margin-left: auto;
+            margin-right: auto
+        }
+        .inputMessage
+        {
+            width: calc(100% - 6px);
+            height: 200px;
+        }
+        .submitButton
+        {
+            background-color: black;
+            color: yellow;
+            font-size: 16px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+    }
+    .rightContent
+    {
+        width: 25%;
+        padding-left: 20px;
+        .infor{
+            margin-top: 40px;
+        }
+    }
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
