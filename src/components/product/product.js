@@ -452,7 +452,10 @@ function Product() {
         },
     ]
 
-
+    const search = window.location.search;
+    const params = new URLSearchParams(search);
+    const foo = params.get('p')
+    console.log(foo)
     return (
 
         <div className={styles.products}>
@@ -499,7 +502,10 @@ function Product() {
                     })
                 }
             </div>
-            <MyPagination />
+            <MyPagination 
+
+                pages={Math.ceil(items.length / 8)}
+            />
         </div>
     )
 }
