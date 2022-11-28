@@ -1,9 +1,12 @@
 import { useState } from "react"
 import styles from "./productDetail.module.scss"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function InfoProduct({ product }) {
 
     const [cost, setCost] = useState(0)
+
     const handlerAddBag = () => {
 
         let pro = product
@@ -15,6 +18,8 @@ function InfoProduct({ product }) {
             bag.push(pro)
         }
         localStorage.setItem('bag', JSON.stringify(bag));
+        toast("Thêm vào giỏ hàng thành công!!!");
+        // window.location.pathname = "/"
     }
 
     return(
@@ -54,6 +59,7 @@ function InfoProduct({ product }) {
                         className={styles.bag}
                         onClick={handlerAddBag}
                     >Them vao gio hang</button>
+                    <ToastContainer />
                 </div>
         </div>
     )

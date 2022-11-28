@@ -1,6 +1,6 @@
 import styles from "./filter.module.scss"
 import Select from "react-select"
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { useState } from "react"
 import clsx from 'clsx'
 
@@ -16,6 +16,19 @@ const options = [
 function Filter() {
 
     const [param, setParam] = useState(0)
+    let [searchParams, setSearchParams] = useSearchParams();
+    let s = parseInt(searchParams.get("sort"))
+    if (s === undefined || s === null || isNaN(s)) {
+
+        s = options[0].label
+    }
+    const [sortBy, setSortBy] = useState(options[0])
+    const handleSort = (value) => {
+
+        setSortBy(value)
+        searchParams.set("sort", value.label)
+        setSearchParams(searchParams)
+    };
 
     return (
 
@@ -73,9 +86,10 @@ function Filter() {
                 <Select
                     defaultValue={options[0]}
                     className={styles.select__input}
-                    //onChange={setSelectedOption}
+                    onChange={handleSort}
                     isSearchable={false}
                     options={options}
+                    value={sortBy}
                 />
             </div>
         </div>
