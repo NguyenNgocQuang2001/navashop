@@ -68,6 +68,30 @@ function Product({ products }) {
             return a.id - b.id
         })
     }
+    var pathname = window.location.pathname.split('/')
+    if (pathname.length > 1) {
+    
+        pathname = pathname[1].trim()
+        if (pathname === "sale") {
+    
+            productSort.sort(function(a, b) {
+
+                return a.sale / a.price - b.sale / b.price
+            })
+        } else if (pathname === "selling") {
+        
+            productSort.sort(function(a, b) {
+
+                return a.price - b.price
+            })
+        } else if (pathname === "newproduct") {
+        
+            productSort.sort(function(a, b) {
+
+                return b.id - a.id
+            })
+        }
+    }
 
     return (
 
