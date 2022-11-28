@@ -5,18 +5,55 @@ import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 function Signup() {
-    const [valueUser, setValueUser] = useState(' ');
+    const [listValue, setListValue] = useState({ valueUser: ' ', valueUserName: ' ', valuePassword: ' ' });
     const [user, setUser] = useState('');
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    const { valueUser, valueUserName, valuePassword } = listValue;
     const handleValue = (e) => {
         setUser(e.target.value);
-        !e.target.value ? setValueUser('Vui lòng điền vào mục này') : setValueUser('');
+        !e.target.value
+            ? setListValue((prev) => ({ ...prev, valueUser: 'Vui lòng điền vào mục này' }))
+            : setListValue((prev) => ({ ...prev, valueUser: '' }));
+    };
+    const handleUser = (e) => {
+        setUserName(e.target.value);
+        !e.target.value
+            ? setListValue((prev) => ({ ...prev, valueUserName: 'Vui lòng điền vào mục này' }))
+            : setListValue((prev) => ({ ...prev, valueUserName: '' }));
+    };
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+        !e.target.value
+            ? setListValue((prev) => ({ ...prev, valuePassword: 'Vui lòng điền vào mục này' }))
+            : setListValue((prev) => ({ ...prev, valuePassword: '' }));
     };
     const handleSubmit = () => {
-        if (valueUser) {
-            setValueUser('Vui lòng điền vào mục này');
+        if (valueUser && valuePassword && valueUserName) {
+            setListValue((prev) => ({
+                ...prev,
+                valueUser: 'Vui lòng điền vào mục này',
+                valuePassword: 'Vui lòng điền vào mục này',
+                valueUserName: 'Vui lòng điền vào mục này',
+            }));
+        } else if (valueUser) {
+            setListValue((prev) => ({
+                ...prev,
+                valueUser: 'Vui lòng điền vào mục này',
+            }));
+        } else if (valuePassword) {
+            setListValue((prev) => ({
+                ...prev,
+                valuePassword: 'Vui lòng điền vào mục này',
+            }));
+        } else if (valueUserName) {
+            setListValue((prev) => ({
+                ...prev,
+                valueUserName: 'Vui lòng điền vào mục này',
+            }));
         } else {
             //Api login
-            console.log(user);
+            console.log(user, userName, password);
         }
     };
     return (
@@ -41,9 +78,27 @@ function Signup() {
                     />
                     <span className={cx('login_required')}>{valueUser}</span>
                 </div>
-
+                <div className={cx('login_input')}>
+                    <input
+                        className={cx('login_username')}
+                        placeholder="Tên đăng nhập"
+                        onChange={handleUser}
+                        onBlur={handleUser}
+                    />
+                    <span className={cx('login_required')}>{valueUserName}</span>
+                </div>
+                <div className={cx('login_input')}>
+                    <input
+                        type="password"
+                        className={cx('login_password')}
+                        placeholder="Mật khẩu"
+                        onChange={handlePassword}
+                        onBlur={handlePassword}
+                    />
+                    <span className={cx('login_required')}>{valuePassword}</span>
+                </div>
                 <button className={cx('clickLogin')} onClick={handleSubmit}>
-                    Tiếp theo
+                    Đăng ký
                 </button>
                 <div className={cx('login_line')}>Hoặc</div>
                 <div className={cx('login_listsup')}>
