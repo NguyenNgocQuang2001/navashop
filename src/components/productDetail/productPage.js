@@ -1,13 +1,17 @@
 import ProductDetail from "./productDetail"
 import Relative from "./relative"
 
-function ProductPage() {
+function ProductPage({ products }) {
 
     return (
-
         <>
-            <ProductDetail />
-            <Relative />
+            <ProductDetail
+
+                products={products}
+            />
+            <Relative
+                products={products}
+            />
         </>
     )
 }

@@ -3,14 +3,17 @@ import { Product } from "../product";
 import { Slidebar } from "../slidebar";
 
 
-function Home() {
+function Home({ products }) {
 
     return (
 
         <>
             <Slidebar />
             <Filter />
-            <Product />
+            <Product 
+
+                products={products}
+            />
         </>
     )
 }

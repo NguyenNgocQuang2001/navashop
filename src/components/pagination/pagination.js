@@ -2,24 +2,26 @@ import * as React from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import styles from "./pagination.module.scss"
-import { useNavigate, createSearchParams } from 'react-router-dom';
+import { useSearchParams } from "react-router-dom";
 
 
 function MyPagination({ pages }) {
 
-    const navigate = useNavigate();
-    const [page, setPage] = React.useState(1);
+    let [searchParams, setSearchParams] = useSearchParams();
+    let p = parseInt(searchParams.get("p"))
+    if (p === undefined || p === null || isNaN(p) || p === "0") {
+
+        p = 1
+    } else {
+
+        p = parseInt(p)
+    }
+    const [page, setPage] = React.useState(p);
     const handleChange = (event, value) => {
 
         setPage(value);
-        navigate({
-
-            pathname: "",
-            search: `?${createSearchParams({
-
-                "p": value
-            })}`,
-        })
+        searchParams.set("p", value)
+        setSearchParams(searchParams)
     };
 
     return (
