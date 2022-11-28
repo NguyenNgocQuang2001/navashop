@@ -4,6 +4,18 @@ import styles from "./productDetail.module.scss"
 function InfoProduct({ product }) {
 
     const [cost, setCost] = useState(0)
+    const handlerAddBag = () => {
+
+        let pro = product
+        pro.count = cost
+        pro.total = pro.sale * cost
+        let bag = JSON.parse(localStorage.getItem("bag") || "[]")
+        if (pro.count > 0) {
+
+            bag.push(pro)
+        }
+        localStorage.setItem('bag', JSON.stringify(bag));
+    }
 
     return(
 
@@ -33,13 +45,14 @@ function InfoProduct({ product }) {
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span>
                             {
-                                `${cost * 200}.000d`
+                                `${cost * product.sale}.000d`
                             }
                         </span>
                     </p>
                     <br/>
                     <button
                         className={styles.bag}
+                        onClick={handlerAddBag}
                     >Them vao gio hang</button>
                 </div>
         </div>

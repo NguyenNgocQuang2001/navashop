@@ -5,12 +5,13 @@ import { useState } from "react"
 import clsx from 'clsx'
 
 const options = [
+    
     { value: '1', label: 'Sắp xếp theo mặc định' },
     { value: '2', label: 'Sắp xếp theo giá tăng dần' },
     { value: '3', label: 'Sắp xếp theo giá giảm dần' },
     { value: '4', label: 'Sắp xếp theo tên A -> Z' },
     { value: '5', label: 'Sắp xếp theo tên Z -> A' },
-  ];
+];
 
 function Filter() {
 

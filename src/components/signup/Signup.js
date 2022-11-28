@@ -35,7 +35,7 @@ function Signup() {
                 <div className={cx('login_input')}>
                     <input
                         className={cx('login_user')}
-                        placeholder="Số điện thoại"
+                        placeholder="Số điện thoại hoặc email"
                         onChange={handleValue}
                         onBlur={handleValue}
                     />

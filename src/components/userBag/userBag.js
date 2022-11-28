@@ -3,50 +3,24 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import UserNavBar from "../userNavbar/userNavbar"
-
-const products = [
-    {
-        image: "/Image/aovetcongso.jpg",
-        name: "Áo Vest Công Sở",
-        price: 250000,
-        count: 1,
-        total: "250,000₫"
-    },
-    {
-        image: "/Image/aokhoackakihailop.jpg",
-        name: "Áo khoác kaki hai lớp",
-        price: 425000,
-        count: "2",
-        total: "850,000đ"
-    },
-    {
-        image: "/Image/aokhoackakihailop.jpg",
-        name: "Áo khoác kaki hai lớp",
-        price: 425000,
-        count: "2",
-        total: "850,000đ"
-    },
-    {
-        image: "/Image/aokhoackakihailop.jpg",
-        name: "Áo khoác kaki hai lớp",
-        price: 425000,
-        count: "2",
-        total: "850,000đ"
-    }
-]
+import { Link } from 'react-router-dom'
 
 function UserBag() {
 
     const [change, setChange] = useState(false)
+    const bag = JSON.parse(localStorage.getItem("bag") || "[]");
     const removeProduct = (index) => {
-        products.splice(index, 1)
+        bag.splice(index, 1)
+        localStorage.setItem('bag', JSON.stringify(bag));
         setChange(!change)
     }
 
     const ChangCount = (index, value) => {
-        products[index].count = value;
+
+        bag[index].count = value;
         setChange(!change)
     }
+
     const navigate = useNavigate();
 
     var totalMoney = 0;
@@ -68,8 +42,8 @@ function UserBag() {
                             <th>TỔNG</th>
                         </tr>
                         {
-                            products.map((element, index) => {
-                                element.total = element.count * element.price;
+                            bag.map((element, index) => {
+                                element.total = element.count * element.sale;
                                 totalMoney += element.total
                                 return (
                                     <tr 
@@ -83,17 +57,21 @@ function UserBag() {
 
                                         </td>
                                         <td>
-                                            <img 
-                                                src={element.image}
-                                                className={styles.imageProduct}
-                                                alt="not found"
-                                            />
+                                            <Link
+                                                to={`/product/${element.name}`}
+                                            >
+                                                <img 
+                                                    src={`/Image/${element.link1}`}
+                                                    className={styles.imageProduct}
+                                                    alt="not found"
+                                                />
+                                            </Link>
                                         </td>
                                         <td className={styles.nameProduct}>
                                             {element.name}
                                         </td>
                                         <td>
-                                            {element.price}<u>đ</u>
+                                            {element.sale}.000<u>đ</u>
                                         </td>
                                         <td>
                                             <input type="number" min="0" value={element.count}
@@ -102,7 +80,7 @@ function UserBag() {
 
                                         </td>
                                         <td>
-                                            {element.total}<u>đ</u>
+                                            {element.total}.000<u>đ</u>
                                         </td>
                                     </tr>
                                 )
@@ -129,7 +107,7 @@ function UserBag() {
                     <div className={styles.bottomContent}>
                         <p>
                             {
-                                "Tổng đơn hàng: "+totalMoney
+                                "Tổng đơn hàng: "+totalMoney + ".000"
                             }<u>đ</u>
                         </p>
                     </div>
