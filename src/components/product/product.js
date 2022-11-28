@@ -4,14 +4,70 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { Link, useSearchParams } from 'react-router-dom'
 import { MyPagination } from "../pagination"
 
+
+const optionSort = [
+    
+    { value: '1', label: 'Sắp xếp theo mặc định' },
+    { value: '2', label: 'Sắp xếp theo giá tăng dần' },
+    { value: '3', label: 'Sắp xếp theo giá giảm dần' },
+    { value: '4', label: 'Sắp xếp theo tên A -> Z' },
+    { value: '5', label: 'Sắp xếp theo tên Z -> A' },
+];
+
 function Product({ products }) {
 
+    let productSort = products
     let [searchParams] = useSearchParams();
-    const params = { 'p' : 1 }
+    let params = { 'p' : 1 }
     searchParams.forEach((value, key) => {
         
         params[key] = value
     });
+
+    let s = params['sort']
+    if (s === optionSort[1].label) {
+
+        productSort.sort(function(a, b) {
+
+            return a.sale - b.sale
+        })
+    } else if (s === optionSort[2].label) {
+
+        productSort.sort(function(a, b) {
+
+            return b.sale - a.sale
+        })
+    } else if (s === optionSort[3].label) {
+
+        productSort.sort(function(a, b) {
+
+            if ( a.name < b.name ){
+                return -1;
+              }
+              if ( a.name > b.name ){
+                return 1;
+              }
+              return 0;
+        })
+    } else if (s === optionSort[4].label) {
+
+        productSort.sort(function(a, b) {
+
+            if ( a.name < b.name ){
+                return 1;
+              }
+              if ( a.name > b.name ){
+                return -1;
+              }
+              return 0;
+        })
+    } else {
+
+        productSort.sort(function(a, b) {
+
+            return a.id - b.id
+        })
+    }
 
     return (
 
@@ -19,7 +75,7 @@ function Product({ products }) {
 
             <div className={styles.product}>
                 {
-                    products.map((item, index) => {
+                    productSort.map((item, index) => {
 
                         if ((params['p'] - 1) * 8 <= index && index < params['p'] * 8) {
 
@@ -47,7 +103,9 @@ function Product({ products }) {
                                             alt="not found"
                                             
                                         />
-                                        <p>{item.name}</p>
+                                        <p
+                                            className={styles.product__name}
+                                        >{item.name}</p>
                                         <p>
                                             &nbsp;
                                             &nbsp;
