@@ -9,6 +9,7 @@ const order = [
 
 function UserOrder() {
 
+    const orders = JSON.parse(localStorage.getItem("orders") || "[]");
     return (
 
         <div
@@ -19,11 +20,12 @@ function UserOrder() {
                 className={styles.order}
             >
                 {
-                    order.map((item, index) => {
+                    orders.map((item, index) => {
 
                         return (
                             <Order 
 
+                                order={item}
                                 key={index}
                             />
                         )

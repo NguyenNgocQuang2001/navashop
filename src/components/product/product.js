@@ -109,6 +109,10 @@ function Product({ products }) {
                                     to={`/product/${item.name}`}
                                     className={styles.link}
                                     key={index}
+                                    onClick={() => {
+
+                                        window.scrollTo(0, 0)
+                                    }}
                                 >
                                     <div 
                                         className={ (index % 4 !== 3 ? styles.product__item : clsx(styles.product__item, styles.product__last__item)) }

@@ -19,7 +19,27 @@ function UserBag() {
     const ChangCount = (index, value) => {
 
         bag[index].count = value;
+        localStorage.setItem('bag', JSON.stringify(bag));
         setChange(!change)
+    }
+
+    const handlerOrder = () => {
+
+        const orders = JSON.parse(localStorage.getItem("orders") || "[]");
+        orders.unshift({
+
+            status: "Đang giao",
+            phone: "1234567899",
+            address: "So nha 19, Quan Hoang Mai, Ha Noi",
+            total: totalMoney,
+            orderID: "joker369",
+            orderDate: new Date().toLocaleString(),
+            products: bag
+        })
+        localStorage.setItem('orders', JSON.stringify(orders));
+        localStorage.setItem('bag', JSON.stringify([]));
+        setChange(!change)
+        toast("Đặt hàng thành công!!!")
     }
 
 
@@ -101,10 +121,7 @@ function UserBag() {
                     <div className={styles.bottomContent}>
                         <button
                             className={styles.button}
-                            onClick={() => {
-
-                                toast("Đặt hàng thành công!!!")
-                            }}
+                            onClick={handlerOrder}
                         >
                             Đặt hàng
                         </button>

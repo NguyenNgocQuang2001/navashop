@@ -32,7 +32,7 @@ const orders = [
     }
 ]
 
-function Order() {
+function Order({ order }) {
 
     return (
 
@@ -45,42 +45,42 @@ function Order() {
                 <div
                     className={styles.info__order}
                 >
-                    Ma don hang : Joker369
+                    Ma don hang : {order.orderID}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Ngay dat : 15/11/2022 09:40
+                    Ngay dat : {order.orderDate}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Trang thai : dang giao
+                    Trang thai : {order.status}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    So dien thoai : 0123456789
+                    So dien thoai : {order.phone}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Dia chi: So nha 19, Quan Hoang Mai, Ha Noi
+                    Dia chi: {order.address}
                 </div>
                 <div
                     className={styles.info__order}
                 >
                     Tong gia tri don hang : {
 
-                        orders.reduce((total, value, index) => {
+                        order.products.reduce((total, value, index) => {
 
-                            return total + value.count * value.price
+                            return total + value.total
                         }, 0)
-                    }&nbsp;d
+                    }.000đ&nbsp;
                 </div>
             </div>
             {
-                orders.map((item, index) => {
+                order.products.map((item, index) => {
 
                     return (
 
@@ -89,10 +89,10 @@ function Order() {
                             key={index}
                         >
                             <Link
-                                to="/product/joker"
+                                to={`/product/${item.name}`}
                             >
                                 <img
-                                    src={item.image}
+                                    src={`/Image/${item.link1}`}
                                     alt="not found"
                                     className={styles.image}
                                 />
@@ -103,7 +103,7 @@ function Order() {
                                 <div
                                     className={styles.name}
                                 >
-                                    Ao cherry thoi trang
+                                    {item.name}
                                 </div>
                                 <div
                                     className={styles.quantity}
@@ -113,7 +113,7 @@ function Order() {
                                 <div
                                     className={styles.cost}
                                 >
-                                    gia tien &nbsp; : &nbsp; {item.price * item.count}
+                                    gia tien &nbsp; : &nbsp; {item.sale * item.count}.000đ
                                 </div>
                             </div>
                         </div>
