@@ -11,11 +11,17 @@ function InfoProduct({ product }) {
         pro.count = cost;
         pro.total = pro.sale * cost;
         let bag = JSON.parse(localStorage.getItem('bag') || '[]');
-        if (pro.count > 0) {
+        if (pro.count > 0 && localStorage.getItem('login') === "1") {
             bag.push(pro);
         }
         localStorage.setItem('bag', JSON.stringify(bag));
-        toast('Thêm vào giỏ hàng thành công!!!');
+        if (localStorage.getItem('login') !== "1") {
+
+            toast('Bạn chưa đăng nhập!!!');
+        } else {
+
+            toast('Thêm vào giỏ hàng thành công!!!');
+        }
         // window.location.pathname = "/"
     };
 

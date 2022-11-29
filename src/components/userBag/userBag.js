@@ -1,9 +1,10 @@
 import styles from "./userBag.module.scss"
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import UserNavBar from "../userNavbar/userNavbar"
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function UserBag() {
 
@@ -21,12 +22,12 @@ function UserBag() {
         setChange(!change)
     }
 
-    const navigate = useNavigate();
 
     var totalMoney = 0;
 
-    return ( 
-       <div className={styles.user__bag}>
+    return (
+        
+        <div className={styles.user__bag}>
             <UserNavBar />
             <div 
                 className={styles.bags}
@@ -92,7 +93,7 @@ function UserBag() {
                     <div className={styles.bottomContent}>
                         <button
                             className={styles.button}
-                            onClick={() => navigate(-1)}
+                            onClick={() => window.location.pathname = "/home"}
                         >
                             Quay lại
                         </button>
@@ -100,6 +101,10 @@ function UserBag() {
                     <div className={styles.bottomContent}>
                         <button
                             className={styles.button}
+                            onClick={() => {
+
+                                toast("Đặt hàng thành công!!!")
+                            }}
                         >
                             Đặt hàng
                         </button>
@@ -113,6 +118,7 @@ function UserBag() {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }

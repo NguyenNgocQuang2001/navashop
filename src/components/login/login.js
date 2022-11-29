@@ -40,6 +40,18 @@ function Login() {
         } else {
             //Api login
             console.log(user, password);
+            const acc = JSON.parse(localStorage.getItem('user'))
+            if (user !== acc.user || password !== acc.password) {
+
+                setListValue((prev) => ({
+                    ...prev,
+                    valuePassword: 'Tai khoan khong chinh xac!!!',
+                }));
+            } else {
+
+                localStorage.setItem('login', "1");
+                window.location.pathname = "/home"
+            }
         }
     };
     return (
@@ -66,6 +78,7 @@ function Login() {
                 </div>
                 <div className={cx('login_input')}>
                     <input
+                        type="password"
                         className={cx('login_password')}
                         placeholder="Mật khẩu"
                         onChange={handlePassword}

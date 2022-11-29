@@ -5,10 +5,21 @@ import Menubar from "./menubar";
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Navbar() {
 
     const [page, setPage] = useState(0)
+    const acc = JSON.parse(localStorage.getItem('user'))
+    let link = "/home"
+    if (localStorage.getItem('login') !== "1") {
+
+        link = "/home"
+    } else {
+
+        link =`/${acc.user + "369"}/bag`
+    }
 
     return (
 
@@ -72,11 +83,19 @@ function Navbar() {
             <input className={styles.navbar_input} type="text" placeholder="Tìm kiếm" />
             <SearchIcon className={styles.navbar__search} />
             <Link 
-                to="/user/bag"
+                to={link}
                 className={styles.link}
+                onClick={() => {
+
+                    if (localStorage.getItem('login') !== "1") {
+
+                        toast("Bạn chưa đăng nhập!!!")
+                    }
+                }}
             >
                 <ShoppingCartIcon className={styles.navbar__card_shopping} />
             </Link>
+            <ToastContainer />
         </div>
     )
 }

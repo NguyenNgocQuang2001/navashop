@@ -7,7 +7,8 @@ import { useEffect, useRef, useState } from 'react';
 const cx = classNames.bind(styles);
 function Header() {
     const inputRef = useRef();
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(localStorage.getItem('login') === "1");
+    const acc = JSON.parse(localStorage.getItem('user'))
     useEffect(() => {
         window.addEventListener('scroll', function () {
             if (document.documentElement.scrollTop > 200) {
@@ -23,7 +24,7 @@ function Header() {
                 <img className={styles.logo} src="/logo-nava.png" alt="not found" />
             </Link>
             {show && (
-                <Link to="/user/profile" className={styles.link}>
+                <Link to={`/${acc.user + "369"}/profile`} className={styles.link}>
                     <Tippy
                         // visible
                         interactive
@@ -33,7 +34,15 @@ function Header() {
                         render={(attrs) => (
                             <div className="box" tabIndex="-1" {...attrs}>
                                 <div className={cx('wrapper')}>
-                                    <Link to="/login" className={cx('logout')} onClick={() => setShow(false)}>
+                                    <Link to="/login" className={cx('logout')}
+                                        
+                                        onClick={() => {
+                                        
+                                            setShow(false)
+                                            localStorage.setItem('login', "0")
+                                            window.location.pathname="/login"
+                                        }}
+                                    >
                                         Đăng xuất
                                     </Link>
                                 </div>

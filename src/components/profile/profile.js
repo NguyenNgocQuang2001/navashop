@@ -3,6 +3,7 @@ import styles from "./profile.module.scss"
 
 function Profile() {
 
+    const acc = JSON.parse(localStorage.getItem('user'))
     return (
 
         <div 
@@ -42,6 +43,7 @@ function Profile() {
                     <input 
                         type="text"
                         className={styles.input}
+                        value={acc.user}
                     />
                 </div>
             </div>
@@ -117,6 +119,7 @@ function Profile() {
                     <input 
                         type="text"
                         className={styles.input}
+                        value={acc.user}
                     />
                 </div>
             </div>
@@ -168,6 +171,7 @@ function Profile() {
                     <input 
                         type="password"
                         className={styles.input}
+                        value={acc.password}
                     />
                 </div>
             </div>

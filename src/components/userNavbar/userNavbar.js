@@ -7,6 +7,7 @@ import { useState } from "react"
 
 function UserNavbar() {
 
+    const acc = JSON.parse(localStorage.getItem('user'))
     var params = window.location.pathname.split('/')
     if (params.length > 2) {
     
@@ -32,7 +33,7 @@ function UserNavbar() {
         <div className={styles.navbar__user}>
 
             <Link 
-                to="/:id/profile"
+                to={`/${acc.user + '369'}/profile`}
             >
                 <button
                     className={clsx(styles.navbar__item, {
@@ -45,7 +46,7 @@ function UserNavbar() {
                 </button>
             </Link>
             <Link 
-                to="/:id/bag"
+                to={`/${acc.user + '369'}/bag`}
             >
                 <button
                     className={clsx(styles.navbar__item, {
@@ -58,7 +59,7 @@ function UserNavbar() {
                 </button>
             </Link>
             <Link 
-                to="/:id/order"
+                to={`/${acc.user + '369'}/order`}
             >
                 <button
                     className={clsx(styles.navbar__item, {
@@ -71,7 +72,7 @@ function UserNavbar() {
                 </button>
             </Link>
             <Link 
-                to="/:id/history"
+                to={`/${acc.user + '369'}/history`}
             >
                 <button
                     className={clsx(styles.navbar__item, {
