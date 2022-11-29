@@ -1,38 +1,7 @@
 import styles from "./order.module.scss"
 import { Link } from "react-router-dom"
 
-const orders = [
-    {
-        image: "/Image/aovetcongso.jpg",
-        name: "Áo Vest Công Sở",
-        price: 250000,
-        count: 1,
-        total: "250,000₫"
-    },
-    {
-        image: "/Image/aokhoackakihailop.jpg",
-        name: "Áo khoác kaki hai lớp",
-        price: 425000,
-        count: "2",
-        total: "850,000đ"
-    },
-    {
-        image: "/Image/aokhoackakihailop.jpg",
-        name: "Áo khoác kaki hai lớp",
-        price: 425000,
-        count: "2",
-        total: "850,000đ"
-    },
-    {
-        image: "/Image/aokhoackakihailop.jpg",
-        name: "Áo khoác kaki hai lớp",
-        price: 425000,
-        count: "2",
-        total: "850,000đ"
-    }
-]
-
-function Order({ order }) {
+function Order({ order, index }) {
 
     return (
 
@@ -125,6 +94,10 @@ function Order({ order }) {
             >
                 <button
                     className={styles.button__cancel}
+                    onClick={() => {
+
+
+                    }}
                 >
                     Huy don hang
                 </button>

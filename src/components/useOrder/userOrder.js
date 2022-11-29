@@ -2,11 +2,6 @@ import styles from "./userOrder.module.scss"
 import { UserNavbar } from "../userNavbar"
 import { Order } from "../order"
 
-const order = [
-    0, 0, 0, 0
-]
-
-
 function UserOrder() {
 
     const orders = JSON.parse(localStorage.getItem("orders") || "[]");
@@ -26,6 +21,7 @@ function UserOrder() {
                             <Order 
 
                                 order={item}
+                                index={index}
                                 key={index}
                             />
                         )

@@ -2,13 +2,10 @@ import styles from "./userHistory.module.scss"
 import { UserNavbar } from "../userNavbar"
 import { History } from "../history"
 
-const history = [
-    0, 0, 0, 0
-]
-
 
 function UserHistory() {
 
+    const history = JSON.parse(localStorage.getItem("orders") || "[]");
     return (
 
         <div
@@ -22,8 +19,9 @@ function UserHistory() {
                     history.map((item, index) => {
 
                         return (
-                            <History 
+                            <History
 
+                                history={item}
                                 key={index}
                             />
                         )
