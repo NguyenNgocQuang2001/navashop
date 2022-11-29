@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function InfoProduct({ product }) {
-    const [cost, setCost] = useState(0);
+    const [cost, setCost] = useState(1);
 
     const handlerAddBag = () => {
         let pro = product;
@@ -14,13 +14,16 @@ function InfoProduct({ product }) {
         if (pro.count > 0 && localStorage.getItem('login') === "1") {
             bag.push(pro);
         }
+        console.log("bag"+bag.length)
         localStorage.setItem('bag', JSON.stringify(bag));
         if (localStorage.getItem('login') !== "1") {
 
             toast('Bạn chưa đăng nhập!!!');
         } else {
-
-            toast('Thêm vào giỏ hàng thành công!!!');
+            if(pro.count > 0)
+                toast('Thêm vào giỏ hàng thành công!!!');
+            else
+                toast('Số lượng sản phẩm muốn thêm phải ít nhất là 1!!!');
         }
         // window.location.pathname = "/"
     };
@@ -36,7 +39,7 @@ function InfoProduct({ product }) {
             <p>{product.describe}</p>
             <div className={styles.cost}>
                 <p>
-                    So luong &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Số lượng &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input
                         type="number"
                         value={cost}
@@ -48,7 +51,7 @@ function InfoProduct({ product }) {
                 </p>
                 <br />
                 <button className={styles.bag} onClick={handlerAddBag}>
-                    Them vao gio hang
+                    Thêm vào giỏ hàng
                 </button>
                 <ToastContainer />
             </div>

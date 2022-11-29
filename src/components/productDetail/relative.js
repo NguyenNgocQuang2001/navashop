@@ -7,7 +7,7 @@ function Relative({ products }) {
 
         <>
 
-            <h1 className={styles.relative}>San pham lien quan</h1>
+            <h1 className={styles.relative}>Sản phẩm liên quan</h1>
             <Product 
                 products={products}
             />

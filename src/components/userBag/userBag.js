@@ -10,15 +10,9 @@ function UserBag() {
 
     const [change, setChange] = useState(false)
     const bag = JSON.parse(localStorage.getItem("bag") || "[]");
+    console.log(bag.count)
     const removeProduct = (index) => {
         bag.splice(index, 1)
-        localStorage.setItem('bag', JSON.stringify(bag));
-        setChange(!change)
-    }
-
-    const ChangCount = (index, value) => {
-
-        bag[index].count = value;
         localStorage.setItem('bag', JSON.stringify(bag));
         setChange(!change)
     }
@@ -71,10 +65,11 @@ function UserBag() {
                                         className={styles.product}
                                         key={index}
                                     >
-                                        <td className={styles.removeButton}>
-                                            <HighlightOffIcon
+                                        <td className={styles.remove}>
+                                            <button className={styles.removeButton}></button>
+                                            {/* <HighlightOffIcon
                                                 onClick={() => removeProduct(index)}
-                                            />
+                                            /> */}
 
                                         </td>
                                         <td>
@@ -91,16 +86,13 @@ function UserBag() {
                                         <td className={styles.nameProduct}>
                                             {element.name}
                                         </td>
-                                        <td>
+                                        <td className={styles.unitPrice}>
                                             {element.sale}.000<u>đ</u>
                                         </td>
-                                        <td>
-                                            <input type="number" min="0" value={element.count}
-                                                onChange={(e) => ChangCount(index, e.target.value)}
-                                            />
-
+                                        <td className={styles.numberProductt}>
+                                            {element.count}
                                         </td>
-                                        <td>
+                                        <td className={styles.totalPrice}>
                                             {element.total}.000<u>đ</u>
                                         </td>
                                     </tr>
