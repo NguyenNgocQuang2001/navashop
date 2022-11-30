@@ -1,5 +1,4 @@
 import styles from "./userBag.module.scss"
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { useState } from "react";
 import UserNavBar from "../userNavbar/userNavbar"
 import { Link } from 'react-router-dom'
@@ -66,10 +65,10 @@ function UserBag() {
                                         key={index}
                                     >
                                         <td className={styles.remove}>
-                                            <button className={styles.removeButton}></button>
-                                            {/* <HighlightOffIcon
+                                            <button 
+                                                className={styles.removeButton}
                                                 onClick={() => removeProduct(index)}
-                                            /> */}
+                                            ></button>
 
                                         </td>
                                         <td>

@@ -16,8 +16,11 @@ function InfoProduct({ product }) {
         }
         console.log("bag"+bag.length)
         localStorage.setItem('bag', JSON.stringify(bag));
-        if (localStorage.getItem('login') !== "1") {
+        if (localStorage.getItem('login') === "2") {
 
+            toast('Bạn là admin!!!');
+        } else if (localStorage.getItem('login') !== "1") {
+        
             toast('Bạn chưa đăng nhập!!!');
         } else {
             if(pro.count > 0)

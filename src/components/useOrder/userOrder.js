@@ -4,7 +4,11 @@ import { Order } from "../order"
 
 function UserOrder() {
 
-    const orders = JSON.parse(localStorage.getItem("orders") || "[]");
+    const orders = JSON.parse(localStorage.getItem("orders") || "[]")
+    orders.forEach((element, index) => {
+        
+        element.index = index
+    });
     return (
 
         <div
@@ -21,7 +25,6 @@ function UserOrder() {
                             <Order 
 
                                 order={item}
-                                index={index}
                                 key={index}
                             />
                         )

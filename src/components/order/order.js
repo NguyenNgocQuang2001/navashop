@@ -1,11 +1,32 @@
 import styles from "./order.module.scss"
 import { Link } from "react-router-dom"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
 
-function Order({ order, index }) {
+function Order({ order }) {
+
+    const [change, setChange] = useState(true)
+    const handlerCancelOrder = () => {
+
+        const orders = JSON.parse(localStorage.getItem("orders") || "[]")
+        let indexOrder = 0
+        orders.forEach((element, index) => {
+
+            if (element.id === order.id) {
+
+                indexOrder = index
+            }
+        })
+        orders.splice(indexOrder, 1)
+        localStorage.setItem('orders', JSON.stringify(orders))
+        setChange(!change)
+        toast("Huy don hang thanh cong!!!")
+    }
 
     return (
 
-        <div
+        change && <div
             className={styles.order}
         >
             <div
@@ -94,14 +115,12 @@ function Order({ order, index }) {
             >
                 <button
                     className={styles.button__cancel}
-                    onClick={() => {
-
-
-                    }}
+                    onClick={handlerCancelOrder}
                 >
                     Huy don hang
                 </button>
             </div>
+            <ToastContainer />
         </div>
     )
 }

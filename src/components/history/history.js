@@ -1,37 +1,6 @@
 import styles from "./history.module.scss"
 import { Link } from "react-router-dom"
 
-const order = [
-    {
-        image: "/Image/aovetcongso.jpg",
-        name: "Áo Vest Công Sở",
-        price: 250000,
-        count: 1,
-        total: "250,000₫"
-    },
-    {
-        image: "/Image/aokhoackakihailop.jpg",
-        name: "Áo khoác kaki hai lớp",
-        price: 425000,
-        count: "2",
-        total: "850,000đ"
-    },
-    {
-        image: "/Image/aokhoackakihailop.jpg",
-        name: "Áo khoác kaki hai lớp",
-        price: 425000,
-        count: "2",
-        total: "850,000đ"
-    },
-    {
-        image: "/Image/aokhoackakihailop.jpg",
-        name: "Áo khoác kaki hai lớp",
-        price: 425000,
-        count: "2",
-        total: "850,000đ"
-    }
-]
-
 function History({ history }) {
 
     return (
@@ -113,7 +82,7 @@ function History({ history }) {
                                 <div
                                     className={styles.cost}
                                 >
-                                    gia tien &nbsp; : &nbsp; {item.sale * item.count}
+                                    gia tien &nbsp; : &nbsp; {item.sale * item.count}.000đ
                                 </div>
                             </div>
                         </div>

@@ -13,12 +13,12 @@ function Navbar() {
     const [page, setPage] = useState(0)
     const acc = JSON.parse(localStorage.getItem('user'))
     let link = "/home"
-    if (localStorage.getItem('login') !== "1") {
-
-        link = "/home"
-    } else {
+    if (localStorage.getItem('login') === "1") {
 
         link =`/${acc.user + "369"}/bag`
+    } else {
+
+        link = "/home"
     }
 
     return (
@@ -82,12 +82,15 @@ function Navbar() {
             </Link>
             <input className={styles.navbar_input} type="text" placeholder="Tìm kiếm" />
             <SearchIcon className={styles.navbar__search} />
-            <Link 
+            <Link
                 to={link}
                 className={styles.link}
                 onClick={() => {
 
-                    if (localStorage.getItem('login') !== "1") {
+                    if (localStorage.getItem('login') === "2") {
+
+                        toast("Bạn là admin!!!")
+                    } else if (localStorage.getItem('login') !== "1") {
 
                         toast("Bạn chưa đăng nhập!!!")
                     }

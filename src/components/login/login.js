@@ -39,18 +39,23 @@ function Login() {
             }));
         } else {
             //Api login
-            console.log(user, password);
+            //console.log(user, password);
             const acc = JSON.parse(localStorage.getItem('user'))
-            if (user !== acc.user || password !== acc.password) {
+            const admin = JSON.parse(localStorage.getItem('admin'))
+            if (user === acc.user && password === acc.password) {
+
+                localStorage.setItem('login', "1");
+                window.location.pathname = "/home"
+            } else if (user === admin.user && password === admin.password) {
+
+                localStorage.setItem('login', "2");
+                window.location.pathname = "/home"
+            } else {
 
                 setListValue((prev) => ({
                     ...prev,
                     valuePassword: 'Tai khoan khong chinh xac!!!',
-                }));
-            } else {
-
-                localStorage.setItem('login', "1");
-                window.location.pathname = "/home"
+                }))
             }
         }
     };

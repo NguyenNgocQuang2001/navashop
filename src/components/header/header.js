@@ -7,8 +7,17 @@ import { useEffect, useRef, useState } from 'react';
 const cx = classNames.bind(styles);
 function Header() {
     const inputRef = useRef();
-    const [show, setShow] = useState(localStorage.getItem('login') === "1");
+    const login = localStorage.getItem('login')
+    const [show, setShow] = useState(login === "1" || login === "2");
     const acc = JSON.parse(localStorage.getItem('user'))
+    let link = ""
+    if (login === "1") {
+
+        link = `/${acc.user + "369"}/profile`
+    } else if (login === "2") {
+
+        link = "/admin/profile"
+    }
     useEffect(() => {
         window.addEventListener('scroll', function () {
             if (document.documentElement.scrollTop > 200) {
@@ -24,7 +33,7 @@ function Header() {
                 <img className={styles.logo} src="/logo-nava.png" alt="not found" />
             </Link>
             {show && (
-                <Link to={`/${acc.user + "369"}/profile`} className={styles.link}>
+                <Link to={link} className={styles.link}>
                     <Tippy
                         // visible
                         interactive
