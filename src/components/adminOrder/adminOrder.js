@@ -7,13 +7,14 @@ import { useState } from "react";
 function AdminOrder({ order }) {
 
     const [change, setChange] = useState(true)
+    const [confirm, setConfirm] = useState(order.confirm)
     const handlerCancelOrder = () => {
 
         const orders = JSON.parse(localStorage.getItem("orders") || "[]")
         let indexOrder = 0
         orders.forEach((element, index) => {
 
-            if (element.id === order.id) {
+            if (element.index === order.index) {
 
                 indexOrder = index
             }
@@ -27,15 +28,17 @@ function AdminOrder({ order }) {
     const handlerConfirm = () => {
 
         const orders = JSON.parse(localStorage.getItem("orders") || "[]")
+        order.status = "Đang giao hàng"
         orders.forEach(element => {
 
-            if (element.id === order.id) {
+            if (element.index === order.index) {
 
                 element.status = "Đang giao hàng"
+                element.confirm = false
             }
         })
         localStorage.setItem("orders", JSON.stringify(orders))
-        setChange(true)
+        setConfirm(false)
         toast("Xác nhận đơn hàng thành công!!!")
     }
 
@@ -133,18 +136,30 @@ function AdminOrder({ order }) {
             <div
                 className={styles.button}
             >
-                <button
-                    className={styles.button__cancel}
-                    onClick={handlerCancelOrder}
-                >
-                    Hủy đơn hàng
-                </button>
-                <button
-                    className={styles.button__confirm}
-                    onClick={handlerConfirm}
-                >
-                    Xác nhận
-                </button>
+                {
+                    confirm && <button
+                        className={styles.button__cancel}
+                        onClick={handlerCancelOrder}
+                    >
+                        Hủy đơn hàng
+                    </button>
+                }
+                {
+                    confirm && <button
+                        className={styles.button__confirm}
+                        onClick={handlerConfirm}
+                    >
+                        Xác nhận
+                    </button>
+                }
+                {
+                    !confirm && <button
+                        className={styles.button__shipped}
+                    >
+                        Giao hàng thành công
+                    </button>
+                }
+               
             </div>
             <ToastContainer />
         </div>

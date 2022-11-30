@@ -13,7 +13,7 @@ function Order({ order }) {
         let indexOrder = 0
         orders.forEach((element, index) => {
 
-            if (element.id === order.id) {
+            if (element.index === order.index) {
 
                 indexOrder = index
             }

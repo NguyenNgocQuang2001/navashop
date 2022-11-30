@@ -8,7 +8,9 @@ function UserOrder() {
     orders.forEach((element, index) => {
         
         element.index = index
-    });
+        element.confirm = true
+    })
+    localStorage.setItem('orders', JSON.stringify(orders))
     return (
 
         <div

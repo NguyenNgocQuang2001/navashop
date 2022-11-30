@@ -81,6 +81,25 @@
             background-color: rgb(255, 0, 0);
         }
 
+        .button__shipped {
+
+            height: 60px;
+            width: 150px;
+            position: absolute;
+            right: 0px;
+            outline: none;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            background-color: rgb(233, 230, 51);
+        }
+
+        .button__shipped:hover {
+
+            background-color: rgb(255, 0, 221);
+        }
+
         .button__confirm {
 
             height: 60px;

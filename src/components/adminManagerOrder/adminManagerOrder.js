@@ -9,7 +9,8 @@ function AdminManagerOrder() {
     orders.forEach((element, index) => {
         
         element.index = index
-    });
+    })
+    localStorage.setItem('orders', JSON.stringify(orders))
     return (
 
         <div
