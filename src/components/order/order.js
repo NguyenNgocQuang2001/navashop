@@ -21,7 +21,7 @@ function Order({ order }) {
         orders.splice(indexOrder, 1)
         localStorage.setItem('orders', JSON.stringify(orders))
         setChange(!change)
-        toast("Huy don hang thanh cong!!!")
+        toast("Hủy đơn hàng thành công!!!")
     }
 
     return (
@@ -35,32 +35,32 @@ function Order({ order }) {
                 <div
                     className={styles.info__order}
                 >
-                    Ma don hang : {order.orderID}
+                    Mã đơn hàng : {order.orderID}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Ngay dat : {order.orderDate}
+                    Ngày đặt : {order.orderDate}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Trang thai : {order.status}
+                    Trạng thái : {order.status}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    So dien thoai : {order.phone}
+                    Số  điện thoại : {order.phone}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Dia chi: {order.address}
+                    Địa chỉ : {order.address}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Tong gia tri don hang : {
+                    Tổng giá trị đơn hàng : {
 
                         order.products.reduce((total, value, index) => {
 

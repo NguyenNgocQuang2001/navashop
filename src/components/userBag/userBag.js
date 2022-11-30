@@ -22,7 +22,7 @@ function UserBag() {
         const acc = JSON.parse(localStorage.getItem("user") || "[]");
         orders.unshift({
 
-            status: "Đang giao",
+            status: "Đang chờ xác nhận",
             phone: "1234567899",
             address: "So nha 19, Quan Hoang Mai, Ha Noi",
             total: totalMoney,

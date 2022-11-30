@@ -23,7 +23,7 @@ function AdminManagerOrder() {
                     orders.map((item, index) => {
 
                         return (
-                            <AdminOrder
+                            <AdminOrder 
 
                                 order={item}
                                 key={index}

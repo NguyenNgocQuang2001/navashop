@@ -27,17 +27,15 @@ function AdminOrder({ order }) {
     const handlerConfirm = () => {
 
         const orders = JSON.parse(localStorage.getItem("orders") || "[]")
-        let indexOrder = 0
-        orders.forEach((element, index) => {
+        orders.forEach(element => {
 
             if (element.id === order.id) {
 
-                indexOrder = index
+                element.status = "Đang giao hàng"
             }
         })
-        orders.splice(indexOrder, 1)
-        localStorage.setItem('orders', JSON.stringify(orders))
-        setChange(!change)
+        localStorage.setItem("orders", JSON.stringify(orders))
+        setChange(true)
         toast("Xác nhận đơn hàng thành công!!!")
     }
 
