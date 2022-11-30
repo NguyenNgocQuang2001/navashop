@@ -22,7 +22,7 @@ function UserOrder() {
                     orders.map((item, index) => {
 
                         return (
-                            <Order 
+                            <Order
 
                                 order={item}
                                 key={index}

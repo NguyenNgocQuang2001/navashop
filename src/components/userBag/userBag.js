@@ -19,6 +19,7 @@ function UserBag() {
     const handlerOrder = () => {
 
         const orders = JSON.parse(localStorage.getItem("orders") || "[]");
+        const acc = JSON.parse(localStorage.getItem("user") || "[]");
         orders.unshift({
 
             status: "Đang giao",
@@ -27,7 +28,8 @@ function UserBag() {
             total: totalMoney,
             orderID: "joker369",
             orderDate: new Date().toLocaleString(),
-            products: bag
+            products: bag,
+            user: acc.user
         })
         localStorage.setItem('orders', JSON.stringify(orders));
         localStorage.setItem('bag', JSON.stringify([]));

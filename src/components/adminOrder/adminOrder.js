@@ -1,10 +1,10 @@
-import styles from "./order.module.scss"
+import styles from "./adminOrder.module.scss"
 import { Link } from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 
-function Order({ order }) {
+function AdminOrder({ order }) {
 
     const [change, setChange] = useState(true)
     const handlerCancelOrder = () => {
@@ -21,7 +21,24 @@ function Order({ order }) {
         orders.splice(indexOrder, 1)
         localStorage.setItem('orders', JSON.stringify(orders))
         setChange(!change)
-        toast("Huy don hang thanh cong!!!")
+        toast("Hủy đơn hàng thành công!!!")
+    }
+
+    const handlerConfirm = () => {
+
+        const orders = JSON.parse(localStorage.getItem("orders") || "[]")
+        let indexOrder = 0
+        orders.forEach((element, index) => {
+
+            if (element.id === order.id) {
+
+                indexOrder = index
+            }
+        })
+        orders.splice(indexOrder, 1)
+        localStorage.setItem('orders', JSON.stringify(orders))
+        setChange(!change)
+        toast("Xác nhận đơn hàng thành công!!!")
     }
 
     return (
@@ -35,32 +52,37 @@ function Order({ order }) {
                 <div
                     className={styles.info__order}
                 >
-                    Ma don hang : {order.orderID}
+                    Mã đơn hàng : {order.orderID}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Ngay dat : {order.orderDate}
+                    Ngày đặt hàng : {order.orderDate}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Trang thai : {order.status}
+                    Trạng thái : {order.status}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    So dien thoai : {order.phone}
+                    Người đặt :&nbsp;&nbsp;{order.user}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Dia chi: {order.address}
+                    Số  điện thoại : {order.phone}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Tong gia tri don hang : {
+                    Địa chỉ : {order.address}
+                </div>
+                <div
+                    className={styles.info__order}
+                >
+                    Tổng giá trị đơn hàng : {
 
                         order.products.reduce((total, value, index) => {
 
@@ -98,12 +120,12 @@ function Order({ order }) {
                                 <div
                                     className={styles.quantity}
                                 >
-                                    So luong  &nbsp; : &nbsp; {item.count}
+                                    Số  lượng  &nbsp; : &nbsp; {item.count}
                                 </div>
                                 <div
                                     className={styles.cost}
                                 >
-                                    gia tien &nbsp; : &nbsp; {item.sale * item.count}.000đ
+                                    Giá tiền &nbsp; : &nbsp; {item.sale * item.count}.000đ
                                 </div>
                             </div>
                         </div>
@@ -111,7 +133,7 @@ function Order({ order }) {
                 })
             }
             <div
-                className={styles.cancel}
+                className={styles.button}
             >
                 <button
                     className={styles.button__cancel}
@@ -119,10 +141,16 @@ function Order({ order }) {
                 >
                     Hủy đơn hàng
                 </button>
+                <button
+                    className={styles.button__confirm}
+                    onClick={handlerConfirm}
+                >
+                    Xác nhận
+                </button>
             </div>
             <ToastContainer />
         </div>
     )
 }
 
-export default Order
+export default AdminOrder
