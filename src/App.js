@@ -17,6 +17,7 @@ import { Signup } from './components/signup';
 import { Introduce } from "./components/introduce"
 import { Contact } from "./components/contact"
 import AdminManagerOrder from './components/adminManagerOrder/adminManagerOrder';
+import AllProduct from './components/allProduct/allProduct';
 
 const products = [
     {
@@ -514,7 +515,7 @@ function App() {
                 <Route path="/home" element={<Home products={products}/>} />
                 <Route path="/introduce" element={<Introduce />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/product" element={<Home products={products}/>} />
+                <Route path="/product" element={<AllProduct products={products}/>} />
                 <Route path="/selling" element={<Home products={products}/>} />
                 <Route path="/newproduct" element={<Home products={products}/>} />
                 <Route path="/sale" element={<Home products={products}/>} />
