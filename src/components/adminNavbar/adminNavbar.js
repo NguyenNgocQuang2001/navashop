@@ -23,6 +23,9 @@ function AdminNavbar() {
         } else if (params === "statistical") {
         
             params = 4
+        } else if (params === "managerorder") {
+        
+            params = 5
         }
     }
     const [param, setParam] = useState(params)
@@ -31,7 +34,7 @@ function AdminNavbar() {
 
         <div className={styles.navbar__admin}>
 
-            <Link 
+            <Link
                 to="/admin/profile"
             >
                 <button
@@ -54,7 +57,7 @@ function AdminNavbar() {
                     })}
                     onClick={() => setParam(2)}
                 >
-                    Them san pham
+                    Thêm sản phẩm
                 </button>
             </Link>
             <Link 
@@ -67,7 +70,7 @@ function AdminNavbar() {
                     })}
                     onClick={() => setParam(3)}
                 >
-                    Khach hang
+                    Khách hàng
                 </button>
             </Link>
             <Link 
@@ -80,7 +83,20 @@ function AdminNavbar() {
                     })}
                     onClick={() => setParam(4)}
                 >
-                    Thong ke
+                    Thống kê
+                </button>
+            </Link>
+            <Link 
+                to="/admin/managerorder"
+            >
+                <button
+                    className={clsx(styles.navbar__item, {
+                                
+                        [styles.active]: param === 5
+                    })}
+                    onClick={() => setParam(5)}
+                >
+                    Quản lý đơn hàng
                 </button>
             </Link>
         </div>

@@ -6,28 +6,40 @@ import { MyPagination } from "../pagination"
 
 const optionTime = [
 
-    { value: '1', label: 'Hom nay' },
-    { value: '2', label: 'Tuan nay' },
-    { value: '3', label: 'Thang nay' },
-    { value: '4', label: 'Tuan truoc' },
-    { value: '5', label: 'Thang truoc' },
+    { value: '1', label: 'Hôm nay' },
+    { value: '2', label: 'Tuần này' },
+    { value: '3', label: 'Tháng này' },
+    { value: '4', label: 'Tuần trước' },
+    { value: '5', label: 'Tháng trước' },
 ]
 
 const optionSort = [
 
     { value: '1', label: 'Sắp xếp theo mặc định' },
-    { value: '2', label: 'Sắp xếp theo ban nhieu nhat' },
-    { value: '3', label: 'Sắp xếp theo ban it nhat' },
-    { value: '4', label: 'Sắp xếp theo doanh thu nhieu nhat' },
-    { value: '5', label: 'Sắp xếp theo doanh thu it nhat' },
+    { value: '2', label: 'Sắp xếp theo bán nhiều nhất' },
+    { value: '3', label: 'Sắp xếp theo bán ít nhất' },
+    { value: '4', label: 'Sắp xếp theo doanh thu nhiều nhất' },
+    { value: '5', label: 'Sắp xếp theo doanh thu ít nhất' },
 ]
 
-const optionSex = [
+const optionType = [
 
-    { value: '1', label: 'Tat ca' },
-    { value: '2', label: 'Do nam' },
-    { value: '3', label: 'Do nu' },
-    { value: '4', label: 'Do doi' },
+    { value: '0', label: "Tất cả" },
+    { value: '1', label: "Áo khoác nam" },
+    { value: '2', label: "Áo thun nam" },
+    { value: '3', label: "Áo sơ mi" },
+    { value: '4', label: "Áo vét, blazer" },
+    { value: '5', label: "Quần jeans" },
+    { value: '6', label: "Đầm, váy" },
+    { value: '7', label: "Áo nữ" },
+    { value: '8', label: "Quần nữ" },
+    { value: '9', label: "Đồ ngủ" },
+    { value: '10', label: "Chân váy" },
+    { value: '11', label: "Mũ" },
+    { value: '12', label: "Kính" },
+    { value: '13', label: "Đồng hồ" },
+    { value: '14', label: "Thắt lưng" },
+    { value: '15', label: "Giày" },
 ]
 
 const products = [
@@ -88,10 +100,10 @@ function Statistical() {
 
                 <Select
 
-                    defaultValue={optionSex[0]}
+                    defaultValue={optionType[0]}
                     className={styles.select__input}
                     isSearchable={false}
-                    options={optionSex}
+                    options={optionType}
                 />
             </div>
             <div

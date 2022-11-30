@@ -34,7 +34,7 @@ const menuItemPhuKien = [
         name: "Thắt lưng"
     },
     {
-        name: "Dày"
+        name: "Giày"
     }
 ]
 

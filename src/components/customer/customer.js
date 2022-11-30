@@ -11,17 +11,17 @@ function Customer({ customer }) {
             <div
                 className={styles.info__customer}
             >
-                Ten khach hang : {customer.name}
+                Tên khách hàng : {customer.name}
             </div>
             <div
                 className={styles.info__customer}
             >
-                Gioi tinh : {customer.sex}
+                Giới thiệu : {customer.sex}
             </div>
             <div
                 className={styles.info__customer}
             >
-                Ngay sinh : {customer.birthday}
+                Ngày sinh : {customer.birthday}
             </div>
             <div
                 className={styles.info__customer}
@@ -31,12 +31,12 @@ function Customer({ customer }) {
             <div
                 className={styles.info__customer}
             >
-                So dien thoai : {customer.phone}
+                Số điện thoại : {customer.phone}
             </div>
             <div
                 className={styles.info__customer}
             >
-                Trang thai : {customer.status}
+                Trạng thái : {customer.status}
             </div>
         </div>
     )

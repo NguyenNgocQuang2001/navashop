@@ -50,7 +50,7 @@ const customers = [
 
 const optionStatus = [
 
-    { value: '1', label: 'Tat ca' },
+    { value: '1', label: 'Tất cả' },
     { value: '2', label: 'Online' },
     { value: '3', label: 'Offline' },
 ]

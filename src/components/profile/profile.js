@@ -3,7 +3,19 @@ import styles from "./profile.module.scss"
 
 function Profile() {
 
-    const acc = JSON.parse(localStorage.getItem('user'))
+    let acc = {}
+    const login = localStorage.getItem('login')
+    console.log(login)
+    if (login === "2") {
+
+        acc = JSON.parse(localStorage.getItem('admin'))
+    } else if (login === "1") {
+
+        acc = JSON.parse(localStorage.getItem('user'))
+    } else {
+
+        acc = {}
+    }
     return (
 
         <div 

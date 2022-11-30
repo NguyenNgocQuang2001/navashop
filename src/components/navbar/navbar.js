@@ -16,6 +16,9 @@ function Navbar() {
     if (localStorage.getItem('login') === "1") {
 
         link =`/${acc.user + "369"}/bag`
+    } else if (localStorage.getItem('login') === "2") {
+
+        link = "/admin/managerorder"
     } else {
 
         link = "/home"
@@ -87,10 +90,7 @@ function Navbar() {
                 className={styles.link}
                 onClick={() => {
 
-                    if (localStorage.getItem('login') === "2") {
-
-                        toast("Bạn là admin!!!")
-                    } else if (localStorage.getItem('login') !== "1") {
+                    if (localStorage.getItem('login') !== "1" && localStorage.getItem('login') !== "2") {
 
                         toast("Bạn chưa đăng nhập!!!")
                     }

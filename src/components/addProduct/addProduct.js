@@ -4,9 +4,21 @@ import Select from "react-select"
 
 const optionType = [
 
-    { value: '1', label: 'Do nam' },
-    { value: '2', label: 'Do nu' },
-    { value: '3', label: 'Do doi' },
+    { value: '1', label: "Áo khoác nam" },
+    { value: '2', label: "Áo thun nam" },
+    { value: '3', label: "Áo sơ mi" },
+    { value: '4', label: "Áo vét, blazer" },
+    { value: '5', label: "Quần jeans" },
+    { value: '6', label: "Đầm, váy" },
+    { value: '7', label: "Áo nữ" },
+    { value: '8', label: "Quần nữ" },
+    { value: '9', label: "Đồ ngủ" },
+    { value: '10', label: "Chân váy" },
+    { value: '11', label: "Mũ" },
+    { value: '12', label: "Kính" },
+    { value: '13', label: "Đồng hồ" },
+    { value: '14', label: "Thắt lưng" },
+    { value: '15', label: "Giày" },
 ]
 
 function AddProduct() {
