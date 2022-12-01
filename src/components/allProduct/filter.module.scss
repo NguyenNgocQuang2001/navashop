@@ -1,0 +1,40 @@
+
+.filter {
+
+    background-color: rgba(7, 27, 27, 0);
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+
+    .filter__text {
+
+        color: rgba(0, 0, 0, 0.4);
+    }
+
+    .filter__text:hover {
+
+        color: rgba(0, 0, 0, 1);
+    }
+
+    .select {
+
+        position: absolute;
+        right: 0px;
+        top: 13px;
+    }
+
+    .select__input {
+
+        width: 250px;
+    }
+
+    .link {
+
+        text-decoration: none;
+    }
+
+    .active {
+
+        color: black;
+    }
+}

@@ -41,7 +41,7 @@ function Navbar() {
                 >Trang chủ</div>
             </Link>
             <Link 
-                to="/product"
+                to="/products"
                 className={styles.link}
             >
                 <div 

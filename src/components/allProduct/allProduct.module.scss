@@ -2,4 +2,113 @@
 
     display: flex;
     flex-direction: row;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .category{
+        display: flex;
+        flex-direction: column;
+        width: 29%;
+    }
+    .productsContent
+    {
+        width: 81%;
+        .products{
+            
+            display: grid;
+            grid-template-columns: auto auto auto;
+            margin-top: 40px;
+            // margin-left: 150px;
+            // margin-right: 150px;
+            margin-bottom: 40px;
+            height: 920px;
+            background-color: rgba(21, 63, 112, 0);
+        
+            .product__item {
+        
+                margin-right: 15px;
+                height: 450px;
+                margin-bottom: 25px;
+                // border: 1px solid rgba(0, 0, 0, 1);
+                cursor: pointer;
+                position: relative;
+    
+                .product__name {
+    
+                    overflow: hidden;
+                    width: 100%;
+                }
+            }
+        
+            .product__last__item {
+        
+                margin-right: 0px;
+            }
+        
+            img {
+        
+                object-fit: cover;
+                width: 100%;
+                height: 80%;
+            }
+        
+            p {
+        
+                text-align: center;
+                color: black;
+            }
+        
+            span {
+        
+                text-decoration-line: line-through;
+                color: rgba(0, 0, 0, 0.5);
+            }
+        
+            .card__shopping {
+        
+                display: none;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: calc(80% - 200px);
+                width: 100%;
+                text-align: center;
+                padding-top: 200px;
+                //background-color: rgba(255, 255, 255, 0.301);
+        
+                .shopping__bag__icon {
+        
+                    width: 100px;
+                    height: 125px;
+                    color: yellowgreen;
+                }
+        
+                .shopping__bag__icon:hover {
+        
+                    width: 100px;
+                    height: 125px;
+                    color: rgb(255, 0, 0);
+                }
+            }
+        
+            .product__item:hover .card__shopping {
+        
+                display: block;
+                background-color: #74747442;
+            }
+        
+            .link {
+        
+                text-decoration: none;
+            }
+        }
+    }
+    
+        
+}
+
+ul{
+    list-style-type: none;
 }
