@@ -1,11 +1,11 @@
-.user__order {
+.admin__history {
 
     margin-left: 150px;
     margin-right: 150px;
     margin-bottom: 20px;
     display: flex;
 
-    .order {
+    .history {
 
         margin-left: 20px;
         margin-top: 40px;
@@ -17,7 +17,11 @@
         scrollbar-width: none;  /* Firefox */
     }
 
-    .not__order {
+    .history::-webkit-scrollbar {
+        display: none;
+    }
+
+    .not__history {
 
         margin-left: 20px;
         margin-top: 40px;
@@ -30,11 +34,7 @@
         text-align: center;
     }
 
-    .order::-webkit-scrollbar {
-        display: none;
-    }
-
-    .not__order::-webkit-scrollbar {
+    .not__history::-webkit-scrollbar {
         display: none;
     }
 }

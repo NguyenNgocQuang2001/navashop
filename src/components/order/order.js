@@ -13,7 +13,7 @@ function Order({ order }) {
         let indexOrder = 0
         orders.forEach((element, index) => {
 
-            if (element.id === order.id) {
+            if (element.index === order.index) {
 
                 indexOrder = index
             }
@@ -110,16 +110,18 @@ function Order({ order }) {
                     )
                 })
             }
-            <div
-                className={styles.cancel}
-            >
-                <button
-                    className={styles.button__cancel}
-                    onClick={handlerCancelOrder}
+            {
+                order.confirm && <div
+                    className={styles.cancel}
                 >
-                    Hủy đơn hàng
-                </button>
-            </div>
+                    <button
+                        className={styles.button__cancel}
+                        onClick={handlerCancelOrder}
+                    >
+                        Hủy đơn hàng
+                    </button>
+                </div>
+            }
             <ToastContainer />
         </div>
     )

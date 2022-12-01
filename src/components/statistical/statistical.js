@@ -109,12 +109,12 @@ function Statistical() {
             <div
                 className={styles.sum__quantity}
             >
-                Tong san pham da ban duoc :  119
+                Tổng sản phẩm đã bán được :  119
             </div>
             <div
                 className={styles.sum__money}
             >
-                Tong doanh thu :  9000.000VND
+                Tổng doanh thu :  9000.000VND
             </div>
             <div
                 className={styles.products}
@@ -148,17 +148,17 @@ function Statistical() {
                                     <div
                                         className={styles.quantity}
                                     >
-                                        So luong da ban duoc  &nbsp; : &nbsp; {item.count}
+                                        Số  lượng đã bán được  &nbsp; : &nbsp; {item.count}
                                     </div>
                                     <div
                                         className={styles.cost}
                                     >
-                                        Gia tien &nbsp; : &nbsp; {item.price}
+                                        Giá tiền &nbsp; : &nbsp; {item.price}
                                     </div>
                                     <div
                                         className={styles.cost}
                                     >
-                                        Tong tien &nbsp; : &nbsp; {item.price * item.count}
+                                        Tổng tiền &nbsp; : &nbsp; {item.price * item.count}
                                     </div>
                                 </div>
                             </div>

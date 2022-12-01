@@ -1,18 +1,18 @@
-import styles from "./userHistory.module.scss"
-import { UserNavbar } from "../userNavbar"
-import { History } from "../history"
+import styles from "./adminHistory.module.scss"
+import { History } from "../historyOrder"
+import { AdminNavbar } from "../adminNavbar";
 
 
-function UserHistory() {
+function AdminHistory() {
 
     const history = JSON.parse(localStorage.getItem("history") || "[]");
     const show = history.length > 0 ? true : false
     return (
 
         <div
-            className={styles.user__history}
+            className={styles.admin__history}
         >
-            <UserNavbar />
+            <AdminNavbar />
             {
                 show && <div 
                     className={styles.history}
@@ -35,11 +35,11 @@ function UserHistory() {
                 !show && <div 
                     className={styles.not__history}
                 >
-                    <h1>Bạn chưa mua đơn hàng nào!!!</h1>
+                    <h1>Không có đơn hàng nào!!!</h1>
                 </div>
             }
         </div>
     )
 }
 
-export default UserHistory
+export default AdminHistory

@@ -7,13 +7,14 @@ import { useState } from "react";
 function AdminOrder({ order }) {
 
     const [change, setChange] = useState(true)
+    const [confirm, setConfirm] = useState(order.confirm)
     const handlerCancelOrder = () => {
 
         const orders = JSON.parse(localStorage.getItem("orders") || "[]")
         let indexOrder = 0
         orders.forEach((element, index) => {
 
-            if (element.id === order.id) {
+            if (element.index === order.index) {
 
                 indexOrder = index
             }
@@ -27,16 +28,42 @@ function AdminOrder({ order }) {
     const handlerConfirm = () => {
 
         const orders = JSON.parse(localStorage.getItem("orders") || "[]")
+        order.status = "Đang giao hàng"
         orders.forEach(element => {
 
-            if (element.id === order.id) {
+            if (element.index === order.index) {
 
                 element.status = "Đang giao hàng"
+                element.confirm = false
             }
         })
         localStorage.setItem("orders", JSON.stringify(orders))
-        setChange(true)
+        setConfirm(false)
         toast("Xác nhận đơn hàng thành công!!!")
+    }
+
+    const handlerShipped = () => {
+
+        const history = JSON.parse(localStorage.getItem("history") || "[]")
+        history.unshift({
+
+            ...order,
+            orderShipped: new Date().toLocaleString()
+        })
+        localStorage.setItem("history", JSON.stringify(history))
+        const orders = JSON.parse(localStorage.getItem("orders") || "[]")
+        let indexOrder = 0
+        orders.forEach((element, index) => {
+
+            if (element.index === order.index) {
+
+                indexOrder = index
+            }
+        })
+        orders.splice(indexOrder, 1)
+        localStorage.setItem('orders', JSON.stringify(orders))
+        setChange(!change)
+        toast("Đã giao hàng thành công!!!")
     }
 
     return (
@@ -133,18 +160,30 @@ function AdminOrder({ order }) {
             <div
                 className={styles.button}
             >
-                <button
-                    className={styles.button__cancel}
-                    onClick={handlerCancelOrder}
-                >
-                    Hủy đơn hàng
-                </button>
-                <button
-                    className={styles.button__confirm}
-                    onClick={handlerConfirm}
-                >
-                    Xác nhận
-                </button>
+                {
+                    confirm && <button
+                        className={styles.button__cancel}
+                        onClick={handlerCancelOrder}
+                    >
+                        Hủy đơn hàng
+                    </button>
+                }
+                {
+                    confirm && <button
+                        className={styles.button__confirm}
+                        onClick={handlerConfirm}
+                    >
+                        Xác nhận
+                    </button>
+                }
+                {
+                    !confirm && <button
+                        className={styles.button__shipped}
+                        onClick={handlerShipped}
+                    >
+                        Xác nhận đã giao hàng thành công
+                    </button>
+                }
             </div>
             <ToastContainer />
         </div>

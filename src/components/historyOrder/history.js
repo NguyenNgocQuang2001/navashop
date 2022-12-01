@@ -14,32 +14,37 @@ function History({ history }) {
                 <div
                     className={styles.info__order}
                 >
-                    Ma don hang : {history.orderID}
+                    Mã đơn hàng : {history.orderID}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Ngay dat : {history.orderDate}
+                    Ngày đặt hàng : {history.orderDate}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Ngay giao : {history.orderShipped}
+                    Ngày giao hàng : {history.orderShipped}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    So dien thoai : {history.phone}
+                    Người đặt hàng : {history.user}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Dia chi: {history.address}
+                    Số  diện thoại : {history.phone}
                 </div>
                 <div
                     className={styles.info__order}
                 >
-                    Tong gia tri don hang : {
+                    Địa chỉ : {history.address}
+                </div>
+                <div
+                    className={styles.info__order}
+                >
+                    Tổng giá trị đơn hàng : {
 
                         history.products.reduce((total, value, index) => {
 
@@ -77,12 +82,12 @@ function History({ history }) {
                                 <div
                                     className={styles.quantity}
                                 >
-                                    So luong  &nbsp; : &nbsp; {item.count}
+                                    Số  lượng  &nbsp; : &nbsp; {item.count}
                                 </div>
                                 <div
                                     className={styles.cost}
                                 >
-                                    gia tien &nbsp; : &nbsp; {item.sale * item.count}.000đ
+                                    Giá tiền &nbsp; : &nbsp; {item.sale * item.count}.000đ
                                 </div>
                             </div>
                         </div>

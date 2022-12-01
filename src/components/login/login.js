@@ -42,11 +42,11 @@ function Login() {
             //console.log(user, password);
             const acc = JSON.parse(localStorage.getItem('user'))
             const admin = JSON.parse(localStorage.getItem('admin'))
-            if (user === acc.user && password === acc.password) {
+            if (acc !== null && user === acc.user && password === acc.password) {
 
                 localStorage.setItem('login', "1");
                 window.location.pathname = "/home"
-            } else if (user === admin.user && password === admin.password) {
+            } else if (admin !== null && user === admin.user && password === admin.password) {
 
                 localStorage.setItem('login', "2");
                 window.location.pathname = "/home"
@@ -91,9 +91,9 @@ function Login() {
                     />
                     <span className={cx('login_required')}>{valuePassword}</span>
                 </div>
-                <buttom to="/home" className={cx('clickLogin')} onClick={handleSubmit}>
+                <button to="/home" className={cx('clickLogin')} onClick={handleSubmit}>
                     Đăng nhập
-                </buttom>
+                </button>
                 <div className={cx('login_line')}>Hoặc</div>
                 <div className={cx('login_listsup')}>
                     <div className={cx('list')}>

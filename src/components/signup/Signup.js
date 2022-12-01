@@ -2,6 +2,8 @@ import styles from './Signup.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const cx = classNames.bind(styles);
 function Signup() {
@@ -53,7 +55,7 @@ function Signup() {
             }));
         } else {
             //Api login
-            console.log(user, password, confirmPassword);
+            //console.log(user, password, confirmPassword);
             if (password !== confirmPassword) {
 
                 setListValue((prev) => ({
@@ -67,7 +69,10 @@ function Signup() {
                     "user" : user,
                     "password": password
                 }));
-                
+                setUser('')
+                setPassword('')
+                setConfirmPassword('')
+                toast("Đăng ký thành công!!!")
             }
         }
     };
@@ -90,6 +95,7 @@ function Signup() {
                         placeholder="Số điện thoại hoặc email"
                         onChange={handleValue}
                         onBlur={handleValue}
+                        value={user}
                     />
                     <span className={cx('login_required')}>{valueUser}</span>
                 </div>
@@ -100,6 +106,7 @@ function Signup() {
                         placeholder="Mật khẩu"
                         onChange={handlePassword}
                         onBlur={handlePassword}
+                        value={password}
                     />
                     <span className={cx('login_required')}>{valuePassword}</span>
                 </div>
@@ -110,6 +117,7 @@ function Signup() {
                         placeholder="Nhập lại mật khẩu"
                         onChange={handleConfirmPassword}
                         onBlur={handleConfirmPassword}
+                        value={confirmPassword}
                     />
                     <span className={cx('login_required')}>{valueConfirmPassword}</span>
                 </div>
@@ -137,6 +145,7 @@ function Signup() {
                     </Link>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 }

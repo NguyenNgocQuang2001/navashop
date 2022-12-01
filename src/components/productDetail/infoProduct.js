@@ -31,6 +31,8 @@ function InfoProduct({ product }) {
         // window.location.pathname = "/"
     };
 
+    const show = localStorage.getItem('login') === "2" ? true : false
+
     return (
         <div className={styles.info}>
             <h2>{product.name}</h2>
@@ -41,21 +43,30 @@ function InfoProduct({ product }) {
             <br />
             <p>{product.describe}</p>
             <div className={styles.cost}>
-                <p>
-                    Số lượng &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input
-                        type="number"
-                        value={cost}
-                        className={styles.input}
-                        onChange={(e) => setCost(e.target.value >= 0 ? e.target.value : 0)}
-                    />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span>{`${cost * product.sale}.000d`}</span>
-                </p>
+                {
+                    !show && <p>
+                        Số lượng &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input
+                            type="number"
+                            value={cost}
+                            className={styles.input}
+                            onChange={(e) => setCost(e.target.value >= 0 ? e.target.value : 0)}
+                        />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span>{`${cost * product.sale}.000d`}</span>
+                    </p>
+                }
                 <br />
-                <button className={styles.bag} onClick={handlerAddBag}>
-                    Thêm vào giỏ hàng
-                </button>
+                {
+                    !show && <button className={styles.bag} onClick={handlerAddBag}>
+                        Thêm vào giỏ hàng
+                    </button>
+                }
+                {
+                    show && <button className={styles.delete}>
+                        Xóa sản phẩm
+                    </button>
+                }
                 <ToastContainer />
             </div>
         </div>

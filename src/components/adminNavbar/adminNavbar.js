@@ -26,6 +26,9 @@ function AdminNavbar() {
         } else if (params === "managerorder") {
         
             params = 5
+        } else if (params === "managerhistory") {
+        
+            params = 6
         }
     }
     const [param, setParam] = useState(params)
@@ -97,6 +100,19 @@ function AdminNavbar() {
                     onClick={() => setParam(5)}
                 >
                     Quản lý đơn hàng
+                </button>
+            </Link>
+            <Link 
+                to="/admin/managerhistory"
+            >
+                <button
+                    className={clsx(styles.navbar__item, {
+                                
+                        [styles.active]: param === 6
+                    })}
+                    onClick={() => setParam(6)}
+                >
+                    Đơn hàng đã bán
                 </button>
             </Link>
         </div>
