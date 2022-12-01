@@ -1,67 +1,91 @@
 import styles from "./allProduct.module.scss"
 import clsx from "clsx"
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { MyPagination } from "../pagination"
 import Filter from "./filter";
 
-const menuItemNam = [
+const menuItem = [
 
     {
-        name: "Áo khoác nam"
+        category:"Thời trang nam",
+        link:"ThoiTrangNam",
+        item:[
+            {
+                name: "Áo khoác nam",
+                link:"AoKhoacNam"
+            },
+            {
+                name: "Áo thun nam",
+                link:"AoThunNam"
+            },
+            {
+                name: "Áo sơ mi",
+                link:"AoSoMi"
+            },
+            {
+                name: "Áo vét, blazer",
+                link:"AoVest"
+            },
+            {
+                name: "Quần jeans",
+                link:"QuanJean"
+            }
+        ]
     },
     {
-        name: "Áo thun nam"
+        category:"Thời trang nữ",
+        link:"ThoiTrangNu",
+        item:[
+            {
+                name: "Đầm, váy",
+                link:"DamVay"
+            },
+            {
+                name: "Áo nữ",
+                link:"AoNu"
+            },
+            {
+                name: "Quần nữ",
+                link:"QuanNu"
+            },
+            {
+                name: "Đồ ngủ",
+                link:"DoNgu"
+            },
+            {
+                name: "Chân váy",
+                link:"ChanVay"
+            }
+        ]
     },
     {
-        name: "Áo sơ mi"
+        category:"Phụ Kiện",
+        link:"PhuKien",
+        item:[
+            {
+                name: "Mũ",
+                link:"Mu"
+            },
+            {
+                name: "Kính",
+                link:"Kinh"
+            },
+            {
+                name: "Đồng hồ",
+                link:"DongHo"
+            },
+            {
+                name: "Thắt lưng",
+                link:"ThatLung"
+            },
+            {
+                name: "Giày",
+                link:"Giay"
+            }
+        ]
     },
-    {
-        name: "Áo vét, blazer"
-    },
-    {
-        name: "Quần jeans"
-    }
 ]
-
-const menuItemPhuKien = [
-
-    {
-        name: "Mũ"
-    },
-    {
-        name: "Kính"
-    },
-    {
-        name: "Đồng hồ"
-    },
-    {
-        name: "Thắt lưng"
-    },
-    {
-        name: "Giày"
-    }
-]
-
-const menuItemNu = [
-
-    {
-        name: "Đầm, váy"
-    },
-    {
-        name: "Áo nữ"
-    },
-    {
-        name: "Quần nữ"
-    },
-    {
-        name: "Đồ ngủ"
-    },
-    {
-        name: "Chân váy"
-    }
-]
-
 
 const optionSort = [
     
@@ -74,7 +98,37 @@ const optionSort = [
 
 function AllProduct({ products }) {
 
-    let productSort = products
+    let productSort=[]
+    let {category,subCategory}=useParams()
+    if(category==null)
+    {
+        productSort=products
+    }else
+    {
+        let subCategorys=[]
+    if(subCategory!=null)
+    {
+        subCategorys.push(subCategory)
+    }else{
+        menuItem.forEach(element => {
+            if(element.link==category)
+            {
+                element.item.forEach(e=>{
+                    subCategorys.push(e.link)
+                })
+            }
+        });
+    }
+
+    products.forEach(e=>{
+        if(subCategorys.includes(e.type))
+        {
+            productSort.push(e)
+        }
+    })
+
+    }
+    
     let [searchParams] = useSearchParams();
     let params = { 'p' : 1 }
     searchParams.forEach((value, key) => {
@@ -151,72 +205,42 @@ function AllProduct({ products }) {
         }
     }
 
-
     return (
         <div
             className={styles.all__product}
         >
             <div className={styles.category}>
-            <h3>DANH MỤC</h3>
+            <h2>DANH MỤC</h2>
             
-            <div className={styles.navbar__menubar}>
-                <div className={styles.menubar__item}>
-                    <h4>Thời Trang Nam
-                    <span class="caret"></span>
-                    </h4>
-
-                    <ul>
-                    {
-                        menuItemNam.map((element,index)=>{
-                            return (
-                                <li 
-                                    className={styles.item}
-                                    key={index} 
-                                >
-                                    {element.name}
-                                </li>
-                            )
-                        })
-                    }
-                    </ul>
-                    
-                    
-                </div>
-                <div className={styles.menubar__item}>
-                    <h4>Thời Trang Nữ</h4>
-                    <ul>
-                    {
-                         menuItemNu.map((element,index)=>{
-                            return (
-                                <li 
-                                    className={styles.item}
-                                    key={index}
-                                >
-                                    {element.name}
-                                </li>
-                            )
-                        })
-                    }
-                    </ul>
-                   
-                </div>
-                <div className={styles.menubar__item}>
-                    <h4>Phụ kiện</h4>
-                    <ul>
-                    {
-                         menuItemPhuKien.map((element,index)=>{
-                            return (
-                                <li 
-                                    className={styles.item}
-                                    key={index}
-                                >
-                                    {element.name}
-                                </li>
-                            )
-                        })
-                    }
-                    </ul>
-                </div>  
+            <div>
+                {
+                    menuItem.map(
+                        (element,index)=>{
+                            return <div className={index==menuItem.length-1? styles.lastCategoryItem: styles.categoryItem}>
+                                <Link
+                            className={styles.link}
+                            to={`/products/${element.link}`}
+                            >
+                                {element.category}
+                                <ul>
+                                {
+                                    element.item.map((e,i)=>{
+                                        return <div className={i==element.item.length-1? styles.lastSubCategory:styles.subCategory}>
+                                            <Link
+                                        className={styles.link}
+                                        to={`/products/${element.link}/${e.link}`}>
+                                        <li>{e.name}</li>
+                                        </Link>
+                                        </div> 
+                                        
+                                    })
+                                }
+                                </ul>
+                            </Link>
+                                </div>
+                        }
+                    )
+                }
         </div>
 
             </div>
@@ -282,7 +306,7 @@ function AllProduct({ products }) {
                 })
             }
             </div>
-            <MyPagination pages={Math.ceil(products.length / 6)}/>
+            <MyPagination pages={Math.ceil(productSort.length / 6)}/>
             </div>
             
 
