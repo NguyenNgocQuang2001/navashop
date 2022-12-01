@@ -46,7 +46,7 @@ function AddProduct() {
                     className={styles.choice__image}
                     htmlFor="avatar"
                 >
-                    Chon anh
+                    Chọn ảnh
                 </label>
             </div>
             <div
@@ -55,7 +55,7 @@ function AddProduct() {
                 <div
                     className={styles.infor__tag}
                 >
-                    Ten san pham
+                    Tên sản phẩm
                 </div>
                 <div
                     className={styles.infor__input}
@@ -72,7 +72,7 @@ function AddProduct() {
                 <div
                     className={styles.infor__tag}
                 >
-                    Loai
+                    Loại
                 </div>
                 <div
                     className={styles.infor__input}
@@ -92,7 +92,7 @@ function AddProduct() {
                 <div
                     className={styles.infor__tag}
                 >
-                    Mo ta
+                    Mô tả
                 </div>
                 <div
                     className={styles.infor__input}
@@ -109,7 +109,7 @@ function AddProduct() {
                 <div
                     className={styles.infor__tag}
                 >
-                    Gia tien (VND)
+                    Giá tiền (VND)
                 </div>
                 <div
                     className={styles.infor__input}
@@ -126,7 +126,7 @@ function AddProduct() {
                 <div
                     className={styles.infor__tag}
                 >
-                    sale (VND)
+                    Sale (VND)
                 </div>
                 <div
                     className={styles.infor__input}
@@ -143,7 +143,7 @@ function AddProduct() {
                 <div
                     className={styles.infor__tag}
                 >
-                    So luong
+                    Số  lượng
                 </div>
                 <div
                     className={styles.infor__input}
@@ -160,7 +160,7 @@ function AddProduct() {
                 <button 
                     className={styles.save}
                 >
-                    Them
+                    Thêm
                 </button>
             </div>
         </div>

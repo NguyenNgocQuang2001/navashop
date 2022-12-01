@@ -42,6 +42,30 @@ function AdminOrder({ order }) {
         toast("Xác nhận đơn hàng thành công!!!")
     }
 
+    const handlerShipped = () => {
+
+        const history = JSON.parse(localStorage.getItem("history") || "[]")
+        history.unshift({
+
+            ...order,
+            orderShipped: new Date().toLocaleString()
+        })
+        localStorage.setItem("history", JSON.stringify(history))
+        const orders = JSON.parse(localStorage.getItem("orders") || "[]")
+        let indexOrder = 0
+        orders.forEach((element, index) => {
+
+            if (element.index === order.index) {
+
+                indexOrder = index
+            }
+        })
+        orders.splice(indexOrder, 1)
+        localStorage.setItem('orders', JSON.stringify(orders))
+        setChange(!change)
+        toast("Đã giao hàng thành công!!!")
+    }
+
     return (
 
         change && <div
@@ -155,11 +179,11 @@ function AdminOrder({ order }) {
                 {
                     !confirm && <button
                         className={styles.button__shipped}
+                        onClick={handlerShipped}
                     >
-                        Giao hàng thành công
+                        Xác nhận đã giao hàng thành công
                     </button>
                 }
-               
             </div>
             <ToastContainer />
         </div>

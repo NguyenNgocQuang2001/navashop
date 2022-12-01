@@ -11,28 +11,38 @@ function AdminManagerOrder() {
         element.index = index
     })
     localStorage.setItem('orders', JSON.stringify(orders))
+    const show = orders.length > 0 ? true : false
     return (
 
         <div
             className={styles.manager__order}
         >
             <AdminNavbar />
-            <div 
-                className={styles.order}
-            >
-                {
-                    orders.map((item, index) => {
-
-                        return (
-                            <AdminOrder 
-
-                                order={item}
-                                key={index}
-                            />
-                        )
-                    })
-                }
-            </div>
+            {
+                show && <div 
+                    className={styles.order}
+                >
+                    {
+                        orders.map((item, index) => {
+    
+                            return (
+                                <AdminOrder 
+    
+                                    order={item}
+                                    key={index}
+                                />
+                            )
+                        })
+                    }
+                </div>
+            }
+            {
+                !show && <div 
+                    className={styles.not__order}
+                >
+                    <h1>Không có đơn hàng nào!!!</h1>
+                </div>
+            }
         </div>
     )
 }

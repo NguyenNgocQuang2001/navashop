@@ -36,9 +36,9 @@ function Profile() {
                 />
                 <label
                     className={styles.choice__image}
-                    for="avatar"
+                    htmlFor="avatar"
                 >
-                    Chon anh
+                    Chọn ảnh
                 </label>
             </div>
             <div
@@ -47,7 +47,7 @@ function Profile() {
                 <div
                     className={styles.infor__tag}
                 >
-                    Ho va ten
+                    Họ và Tên
                 </div>
                 <div
                     className={styles.infor__input}
@@ -65,7 +65,7 @@ function Profile() {
                 <div
                     className={styles.infor__tag}
                 >
-                    Gioi tinh
+                    Giới tính
                 </div>
                 <div
                     className={styles.infor__input}
@@ -95,7 +95,7 @@ function Profile() {
                         <label
                             className={styles.label__sex}
                         >
-                            Nu
+                            Nữ
                         </label>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ function Profile() {
                 <div
                     className={styles.infor__tag}
                 >
-                    Ngay sinh
+                    Ngày sinh
                 </div>
                 <div
                     className={styles.infor__input}
@@ -141,7 +141,7 @@ function Profile() {
                 <div
                     className={styles.infor__tag}
                 >
-                    So dien thoai
+                    Số  điện thoại
                 </div>
                 <div
                     className={styles.infor__input}
@@ -158,7 +158,7 @@ function Profile() {
                 <div
                     className={styles.infor__tag}
                 >
-                    Dia chi
+                    Địa chỉ
                 </div>
                 <div
                     className={styles.infor__input}
@@ -175,7 +175,7 @@ function Profile() {
                 <div
                     className={styles.infor__tag}
                 >
-                    Mat khau
+                    Mật khẩu
                 </div>
                 <div
                     className={styles.infor__input}
@@ -193,7 +193,7 @@ function Profile() {
                 <button 
                     className={styles.save}
                 >
-                    Luu
+                    Lưu
                 </button>
             </div>
         </div>

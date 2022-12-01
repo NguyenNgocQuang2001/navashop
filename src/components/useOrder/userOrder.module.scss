@@ -17,7 +17,24 @@
         scrollbar-width: none;  /* Firefox */
     }
 
+    .not__order {
+
+        margin-left: 20px;
+        margin-top: 40px;
+        padding-right: 5px;
+        width: 100%;
+        height: 700px;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        text-align: center;
+    }
+
     .order::-webkit-scrollbar {
+        display: none;
+    }
+
+    .not__order::-webkit-scrollbar {
         display: none;
     }
 }

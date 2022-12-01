@@ -24,7 +24,7 @@ function History({ history }) {
                 <div
                     className={styles.info__order}
                 >
-                    Ngay giao : {history.orderDate}
+                    Ngay giao : {history.orderShipped}
                 </div>
                 <div
                     className={styles.info__order}
