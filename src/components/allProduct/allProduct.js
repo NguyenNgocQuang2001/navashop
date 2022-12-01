@@ -218,7 +218,7 @@ function AllProduct({ products }) {
                         (element,index)=>{
                             return <div className={index==menuItem.length-1? styles.lastCategoryItem: styles.categoryItem}>
                                 <Link
-                            className={styles.link}
+                            className={ (category==element.link)? styles.hyperLink:styles.link}
                             to={`/products/${element.link}`}
                             >
                                 {element.category}
@@ -227,7 +227,7 @@ function AllProduct({ products }) {
                                     element.item.map((e,i)=>{
                                         return <div className={i==element.item.length-1? styles.lastSubCategory:styles.subCategory}>
                                             <Link
-                                        className={styles.link}
+                                        className={(subCategory==e.link)? styles.hyperLink:styles.link}
                                         to={`/products/${element.link}/${e.link}`}>
                                         <li>{e.name}</li>
                                         </Link>
