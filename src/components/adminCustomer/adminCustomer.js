@@ -173,6 +173,10 @@ function AdminCustomer() {
                 tmpCustomers.push(element)
             }
         })
+        if (st === undefined) {
+
+            tmpCustomers = [...cloneCustomers]
+        }
         cloneCustomers = [...tmpCustomers]
     }
 
