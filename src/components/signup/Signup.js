@@ -139,7 +139,7 @@ function Signup() {
                 <div 
                     className={cx('signup')}
                 >
-                    Bạn mới biết đến NAVA?
+                    Bạn đã có tài khoản. &nbsp;  &nbsp; 
                     <Link to="/login" className={cx('linkup')}>
                         Đăng nhập
                     </Link>

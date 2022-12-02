@@ -169,7 +169,7 @@ function Profile() {
                     />
                 </div>
             </div>
-            <div
+            {/* <div
                 className={styles.infor}
             >
                 <div
@@ -186,7 +186,7 @@ function Profile() {
                         value={acc.password}
                     />
                 </div>
-            </div>
+            </div> */}
             <div
                 className={styles.button}
             >
