@@ -38,6 +38,16 @@ function Customer({ customer }) {
             >
                 Trạng thái : {customer.status}
             </div>
+            <div
+                className={styles.info__customer}
+            >
+                Số  sản phẩm đã mua : {customer.bought}
+            </div>
+            <div
+                className={styles.info__customer}
+            >
+                Tổng tiền đã mua : {customer.money}.000đ
+            </div>
         </div>
     )
 }
